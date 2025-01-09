@@ -32,7 +32,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';  // Import React Router
 
 // Import the components for the pages
-import HomePage from './components/HomePage.js'; // Assuming HomePage.js is in the same folder
+import HomePage from './components/HomePage.jsx'; // Assuming HomePage.js is in the same folder
 import SignIn from './Auth/Sign_In'; // Adjust the path based on where your components are located
 import SignUp from './Auth/Sign_Up';
 
