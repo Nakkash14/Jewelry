@@ -25,22 +25,26 @@
 // export default App;
 
 
+/////////////////////////////////////////////////////////
+
+// App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import SignIn from './Auth/Sign_In';  // Import your SignIn component
-import SignUp from './Auth/Sign_Up';  // Import your SignUp component
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';  // Import React Router
+
+// Import the components for the pages
+import HomePage from './components/HomePage.js'; // Assuming HomePage.js is in the same folder
+import SignIn from './Auth/Sign_In'; // Adjust the path based on where your components are located
+import SignUp from './Auth/Sign_Up';
 
 const App = () => {
   return (
     <Router>
-      <div>
-        <h1>Welcome to Jewelry Store</h1>
-        {/* Set up Routes for navigation */}
-        <Routes>
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />} />
-        </Routes>
-      </div>
+      <Routes>
+        {/* Define the Routes for the pages */}
+        <Route path="/" element={<HomePage />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
     </Router>
   );
 };
