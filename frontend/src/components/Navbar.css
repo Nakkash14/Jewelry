@@ -64,13 +64,15 @@
   .sidebar {
     display: none;
     position: fixed;
-    top: 1; /* Set to 0 to close the gap between the navbar and the sidebar */
+    top: 0; /* Adjust to 0 to avoid a gap */
     left: -100%;
     width: 70%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.9);
     transition: left 0.3s ease;
-    padding-top: 20px; /* Keeps the padding if needed, you can remove this if unnecessary */
+    padding-top: 80px; /* Keeps the padding if needed */
+    z-index: 999; /* Ensure it's behind the navbar */
+    overflow-y: auto; /* Allow scrolling inside the sidebar if needed */
   }
   
   .sidebar.active {
@@ -100,6 +102,11 @@
     color: #f0a500; /* Highlight color */
   }
   
+  /* Prevent scrolling on the body when the sidebar is open */
+  .no-scroll {
+    overflow: hidden; /* Disable scrolling on the body */
+  }
+  
   /* Media Queries for Mobile and Tablet */
   @media (max-width: 768px) {
     .nav-links {
@@ -113,10 +120,4 @@
     .sidebar {
       display: block;
     }
-  }
-  
-  /* Disable scrolling when sidebar is open */
-  .no-scroll {
-    overflow: hidden;
-  }
-  
+  }  
