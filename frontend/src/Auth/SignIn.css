@@ -1,0 +1,162 @@
+/* Full page container to hold both sides */
+.signin-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  background: linear-gradient(145deg, #faf8f6, #f0ecec);
+}
+
+/* Left side for sign-in form */
+.signin-left {
+  flex: 1;
+  padding: 50px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #d4af37;
+  text-align: center;
+}
+
+p {
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.signin-form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #555;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.form-group input:focus {
+  border-color: #d4af37;
+  outline: none;
+  box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+}
+
+.form-group input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.signin-button {
+  background-color: #d4af37;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.signin-button:hover {
+  background-color: #b3942e;
+}
+
+/* Forgot password link */
+.forgot-password {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.forgot-password a {
+  color: #d4af37;
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+/* Divider line between SignIn and Register sections */
+.divider {
+  width: 2px;
+  background-color: #d4af37;
+  height: 100%;
+}
+
+/* Right section for register button */
+.signin-right {
+  flex: 1;
+  padding: 50px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin-right h2 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.signin-right p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.register-button {
+  background-color: #d4af37;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.register-button a {
+  color: white;
+  text-decoration: none;
+}
+
+.register-button:hover {
+  background-color: #b3942e;
+}
+
+.register-link {
+  color: white;
+  text-decoration: none;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
