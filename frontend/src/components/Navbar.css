@@ -1,0 +1,122 @@
+/* General Navbar Styles */
+.navbar-container {
+    position: relative;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 20px;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Keep the navbar always on top */
+  }
+  
+  .navbar .logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  /* Navigation Links (Desktop) */
+  .nav-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between; /* Distributes the links with equal space between them */
+    margin-left: 20px;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    margin-left: 30px; /* Space between menu items */
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    margin-right: 20px; /* Adds space between links */
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #f0a500;
+  }
+  
+  /* Hamburger Menu (Mobile) */
+  .hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+  
+  .hamburger-menu div {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+  }
+  
+  /* Sidebar (Mobile Menu) */
+  .sidebar {
+    display: none;
+    position: fixed;
+    top: 1; /* Set to 0 to close the gap between the navbar and the sidebar */
+    left: -100%;
+    width: 70%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: left 0.3s ease;
+    padding-top: 20px; /* Keeps the padding if needed, you can remove this if unnecessary */
+  }
+  
+  .sidebar.active {
+    left: 0;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sidebar li {
+    margin: 20px 0;
+  }
+  
+  .sidebar a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .sidebar a:hover {
+    color: #f0a500; /* Highlight color */
+  }
+  
+  /* Media Queries for Mobile and Tablet */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none; /* Hide the nav links on mobile */
+    }
+  
+    .hamburger-menu {
+      display: flex; /* Show the hamburger icon on mobile */
+    }
+  
+    .sidebar {
+      display: block;
+    }
+  }
+  
+  /* Disable scrolling when sidebar is open */
+  .no-scroll {
+    overflow: hidden;
+  }
+  

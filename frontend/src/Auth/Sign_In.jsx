@@ -1,57 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SignIn.css";
 
 const SignIn = () => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: ""
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
     <div className="signin-container">
-      {/* Left side: SignIn form */}
+      {/* Overlay to block content when sidebar is open */}
+      <div className="overlay"></div>
+
+      {/* Left side: Sign In form */}
       <div className="signin-left">
         <h1>Welcome Back</h1>
-        <p>Sign in to explore timeless jewelry collections.</p>
+        <p>Sign in to access your account and explore exclusive jewelry.</p>
         <form className="signin-form">
           <div className="form-group">
-            <label htmlFor="email">Email Address</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter your email"
-              required
-            />
+            <div className={`input-container ${formData.email ? 'filled' : ''}`}>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder=" "
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+              <label htmlFor="email">Email Address</label>
+            </div>
           </div>
           <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Enter your password"
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label>
-              <input type="checkbox" name="remember" /> Remember Me
-            </label>
+            <div className={`input-container ${formData.password ? 'filled' : ''}`}>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder=" "
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+              <label htmlFor="password">Password</label>
+            </div>
           </div>
           <button type="submit" className="signin-button">
             Sign In
           </button>
-          <p className="forgot-password">
-            <a href="/reset-password">Forgot your password?</a>
-          </p>
         </form>
       </div>
 
       {/* Vertical divider */}
       <div className="divider"></div>
 
-      {/* Right side: Register button */}
+      {/* Right side: Sign Up prompt */}
       <div className="signin-right">
-        <h2>Don't have an account?</h2>
-        <p>Join us and explore our luxury jewelry collections.</p>
-        <button className="register-button">
-          <a href="/signup" className="register-link">Register Now</a>
+        <h2>New to Us?</h2>
+        <p>Join our jewelry community and start shopping today!</p>
+        <button className="signup-button">
+          <a href="/signup" className="signup-link">Sign Up</a>
         </button>
       </div>
     </div>

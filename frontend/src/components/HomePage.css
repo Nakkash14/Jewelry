@@ -11,314 +11,143 @@ body {
     color: #333;
 }
 
-/* Navigation Bar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #000;
-    padding: 20px;
-    position: relative;
-    z-index: 10; /* Ensure navbar stays on top of other content */
-}
-
-.navbar .logo h1 {
-    color: #fff;
-    font-size: 24px;
-}
-
-/* Navigation Links (visible only on larger screens) */
-.nav-links {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between; /* This ensures the links are spaced out evenly */
-    margin-left: 20px;
-}
-
-.nav-links li {
-    margin-left: 20px; /* Space between menu items */
-}
-
-.nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    margin-right: 20px; /* Adds space between links */
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #f0a500;
-}
-
-/* Mobile Menu Button (Hamburger) */
-.hamburger-menu {
-    display: none; /* Hidden by default */
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-}
-
-.hamburger-menu div {
-    width: 30px;
-    height: 4px;
-    background-color: #fff;
-}
-
-/* Sidebar (Mobile Menu) */
-.sidebar {
-    display: none; /* Hidden by default */
-    position: fixed;
-    top: 0;
-    left: -50%; /* Start from off-screen */
-    width: 50%; /* Cover half the screen */
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Dark background */
-    z-index: 1000;
-    transition: left 0.3s ease-in-out; /* Smooth transition */
-    padding-top: 100px; /* Space for logo or any header element inside the sidebar */
-}
-
-.sidebar.active {
-    display: block; /* Show the sidebar when active */
-    left: 0; /* Slide in from left */
-}
-
-/* Sidebar Menu Items */
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center; /* Center menu items */
-}
-
-.sidebar li {
-    margin: 0;
-}
-
-.sidebar a {
-    color: #fff;
-    font-size: 24px;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.sidebar a:hover {
-    color: #f0a500;
-}
-
 /* Hero Section */
 .hero {
-    height: 80vh; /* Reduced height */
     background-size: cover;
     background-position: center;
+    height: 60vh; /* Adjusting the height of the hero section */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    color: white;
+    padding: 0 20px;
 }
 
-.hero-content {
-    color: #fff;
-    max-width: 600px;
-}
-
-.hero h1 {
+.hero-content h1 {
     font-size: 48px;
     margin-bottom: 20px;
 }
 
-.hero p {
-    font-size: 18px;
-    margin-bottom: 20px;
+.hero-content p {
+    font-size: 24px;
+    margin-bottom: 30px;
 }
 
 .cta-btn {
-    background-color: #f0a500;
-    padding: 15px 30px;
+    font-size: 18px;
     color: #fff;
+    background-color: #f0a500;
+    padding: 10px 30px;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 18px;
     transition: background-color 0.3s ease;
 }
 
 .cta-btn:hover {
-    background-color: #e08e00;
+    background-color: #e07b00;
 }
 
 /* Jewelry Categories Section */
 .jewelry-categories {
-    padding: 50px 20px;
     background-color: #fff;
+    padding: 50px 20px;
     text-align: center;
 }
 
 .jewelry-categories h2 {
     font-size: 36px;
     margin-bottom: 30px;
+    color: #333;
 }
 
 .category-list {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: space-between; /* Adjust spacing between items */
     flex-wrap: wrap;
+    gap: 20px; /* Add space between the category cards */
 }
 
 .category-card {
-    background-color: #f8f8f8;
-    padding: 20px;
+    width: 250px;
+    margin: 10px;
     border-radius: 8px;
-    width: 30%;
-    text-align: center;
-    box-sizing: border-box;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center; /* Centering the button */
 }
 
 .category-card img {
     width: 100%;
-    height: auto;
-    border-radius: 5px;
+    height: 250px;
+    object-fit: cover;
 }
 
 .category-btn-wrapper {
-    margin-top: 20px;
+    margin-top: 15px; /* Move the button below the image */
 }
 
 .category-btn {
-    padding: 10px 20px;
-    background-color: #f0a500;
+    font-size: 18px;
     color: #fff;
+    background-color: #f0a500;
+    padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 .category-btn:hover {
-    background-color: #e08e00;
-}
-
-/* 3D Hover Effect on Jewelry Category */
-.category-card:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Mobile/Tablet Styles for Jewelry Categories */
-@media (max-width: 768px) {
-    .category-list {
-        display: block; /* Stack categories vertically */
-        text-align: center;
-    }
-
-    .category-card {
-        width: 90%; /* Make each card take up most of the screen width */
-        margin: 0 auto 20px;
-    }
-
-    .category-btn-wrapper {
-        text-align: center;
-    }
-
-    .category-btn {
-        padding: 12px 25px; /* Adjust button padding for better look */
-    }
-
-    /* Adjust navbar layout for mobile */
-    .navbar .nav-links {
-        display: none; /* Hide links by default on mobile */
-        width: 100%;
-        justify-content: space-around;
-        text-align: center;
-        padding-top: 50px; /* Space between links and logo */
-    }
-
-    .navbar .nav-links.active {
-        display: block; /* Ensure links are hidden on mobile */
-    }
-
-    /* Hamburger menu visibility on mobile */
-    .hamburger-menu {
-        display: flex; /* Show hamburger menu on mobile */
-    }
+    background-color: #e07b00;
 }
 
 /* About Us Section */
 .about-us {
-    padding: 50px 20px;
     background-color: #fff;
+    padding: 50px 20px;
     text-align: center;
 }
 
 .about-us h2 {
     font-size: 36px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    color: #333;
 }
 
 .about-us p {
     font-size: 18px;
-    color: #333;
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
-
-.about-us .cta-btn {
-    background-color: #f0a500;
-    padding: 15px 30px;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.about-us .cta-btn:hover {
-    background-color: #e08e00;
+    margin-bottom: 30px;
+    color: #666;
 }
 
 /* Footer Section */
 .footer {
-    background-color: #000;
-    color: #fff;
-    padding: 20px 0;
+    background-color: #333;
+    color: white;
+    padding: 30px 20px;
     text-align: center;
 }
 
 .footer p {
-    font-size: 14px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .social-links {
     list-style-type: none;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+    padding: 0;
 }
 
 .social-links li {
-    display: inline-block;
+    display: inline;
+    margin-right: 15px; /* Add space between social media icons */
 }
 
 .social-links a {
-    color: #fff;
-    font-size: 18px;
+    color: white;
+    font-size: 20px;
     transition: color 0.3s ease;
 }
 
 .social-links a:hover {
     color: #f0a500;
-}
-
-/* Desktop Styles */
-@media (min-width: 769px) {
-    .navbar .hamburger-menu {
-        display: none; /* Hide hamburger menu on desktop */
-    }
-
-    .navbar .nav-links {
-        display: flex; /* Show navbar links side by side */
-    }
 }
