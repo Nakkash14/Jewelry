@@ -12,7 +12,7 @@
     color: white;
     position: sticky;
     top: 0;
-    z-index: 1000; /* Keep the navbar always on top */
+    z-index: 1000;
   }
   
   .navbar .logo h1 {
@@ -25,20 +25,20 @@
   .nav-links {
     list-style-type: none;
     display: flex;
-    justify-content: space-between; /* Distributes the links with equal space between them */
-    margin-left: 20px;
+    justify-content: space-between;
     padding: 0;
+    margin-left: 20px; /* Add margin for spacing on the left */
   }
   
   .nav-links li {
-    margin-left: 30px; /* Space between menu items */
+    margin-left: 30px;
   }
   
   .nav-links a {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
-    margin-right: 20px; /* Adds space between links */
+    margin-right: 20px;
     transition: color 0.3s ease;
   }
   
@@ -52,6 +52,7 @@
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
+    margin-left: auto; /* This will push the icon to the right */
   }
   
   .hamburger-menu div {
@@ -60,19 +61,19 @@
     background-color: white;
   }
   
-  /* Sidebar (Mobile Menu) */
+  /* Sidebar (Mobile) */
   .sidebar {
     display: none;
     position: fixed;
-    top: 0; /* Adjust to 0 to avoid a gap */
+    top: 0;
     left: -100%;
     width: 70%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.9);
     transition: left 0.3s ease;
-    padding-top: 80px; /* Keeps the padding if needed */
-    z-index: 999; /* Ensure it's behind the navbar */
-    overflow-y: auto; /* Allow scrolling inside the sidebar if needed */
+    padding-top: 80px;
+    z-index: 999;
+    overflow-y: auto;
   }
   
   .sidebar.active {
@@ -99,25 +100,69 @@
   }
   
   .sidebar a:hover {
-    color: #f0a500; /* Highlight color */
+    color: #f0a500;
   }
   
   /* Prevent scrolling on the body when the sidebar is open */
   .no-scroll {
-    overflow: hidden; /* Disable scrolling on the body */
+    overflow: hidden;
+  }
+  
+  /* Account Dropdown (Desktop) */
+  .account-dropdown {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 999;
+  }
+  
+  .account-dropdown.active {
+    display: block;
+  }
+  
+  .account-dropdown a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+  }
+  
+  .account-dropdown a:hover {
+    color: #f0a500;
   }
   
   /* Media Queries for Mobile and Tablet */
   @media (max-width: 768px) {
+    /* Hide the nav links on mobile */
     .nav-links {
-      display: none; /* Hide the nav links on mobile */
+      display: none;
     }
   
+    /* Show the hamburger menu on mobile */
     .hamburger-menu {
-      display: flex; /* Show the hamburger icon on mobile */
+      display: flex;
     }
   
+    /* Make the sidebar visible on mobile */
     .sidebar {
       display: block;
+    }
+  
+    /* Hide the account icon on mobile */
+    .account-icon {
+      display: none;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    /* Display the account icon on desktop */
+    .account-icon {
+      display: block;
+      cursor: pointer;
     }
   }  
