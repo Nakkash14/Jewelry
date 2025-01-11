@@ -1,9 +1,9 @@
 /* General Navbar Styles */
 .navbar-container {
     position: relative;
-  }
-  
-  .navbar {
+}
+
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,56 +13,173 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-  }
-  
-  .navbar .logo h1 {
+}
+
+.navbar .logo h1 {
     font-size: 24px;
     font-weight: bold;
     margin: 0;
-  }
-  
-  /* Navigation Links (Desktop) */
-  .nav-links {
+}
+
+/* Navigation Links (Desktop) */
+.nav-links {
     list-style-type: none;
     display: flex;
     justify-content: space-between;
     padding: 0;
-    margin-left: 20px; /* Add margin for spacing on the left */
-  }
-  
-  .nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links li {
     margin-left: 30px;
-  }
-  
-  .nav-links a {
+}
+
+.nav-links a {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
     margin-right: 20px;
     transition: color 0.3s ease;
-  }
-  
-  .nav-links a:hover {
+}
+
+.nav-links a:hover {
     color: #f0a500;
-  }
-  
-  /* Hamburger Menu (Mobile) */
-  .hamburger-menu {
+}
+
+/* Hamburger Menu (Mobile) */
+.hamburger-menu {
     display: none;
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
-    margin-left: auto; /* This will push the icon to the right */
-  }
-  
-  .hamburger-menu div {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.hamburger-menu div {
     width: 30px;
     height: 4px;
     background-color: white;
-  }
-  
-  /* Sidebar (Mobile) */
-  .sidebar {
+}
+
+/* Account Icon (Desktop Only) */
+.account-icon {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+    margin-left: 20px;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* When the account icon is hovered or focused */
+.account-icon:hover, .account-icon:focus {
+    color: #f0a500; /* Change to a contrasting color (yellow) */
+}
+
+/* Account Dropdown Links */
+.account-buttons a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    margin: 10px 0;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect on the account dropdown links */
+.account-buttons a:hover {
+    color: #f0a500; /* Change the color to yellow when hovered */
+}
+
+/* Account Dropdown Icons */
+.account-buttons i {
+    color: white; /* Default color */
+    margin-right: 10px;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover effect on account dropdown icons */
+.account-buttons a:hover i {
+    color: #f0a500; /* Change icon color to yellow when hovered */
+}
+
+/* Account Dropdown (From Right Side, Like Sidebar) */
+.account-dropdown {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Initially hidden off-screen to the right */
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 400px;
+    height: 100%;
+    padding: 20px;
+    z-index: 999;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out, visibility 0s 0.3s; /* Smooth transition for sliding in and out */
+    visibility: hidden; /* Ensure it's hidden initially */
+    padding-top: 150px; /* Adjusted for better positioning */
+}
+
+.account-dropdown.active {
+    right: 0; /* Slide in from the right */
+    visibility: visible; /* Make it visible when active */
+    transition: right 0.3s ease-in-out, visibility 0s 0s; /* Smooth transition for opening */
+}
+
+.account-dropdown a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 50px; /* Rounded edges for buttons */
+    background-color: #444;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Added transform for hover effect */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px; /* Space between text and icon */
+}
+
+/* Hover effect with glow */
+.account-dropdown a:hover {
+    background-color: #f0a500;
+    color: white;
+    transform: scale(1.05); /* Subtle grow effect */
+}
+
+/* Account dropdown text */
+.account-dropdown .account-text {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.account-dropdown .account-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Icons inside the account dropdown */
+.account-dropdown .account-buttons a i {
+    font-size: 22px; /* Slightly bigger icon size */
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+/* Button hover effects */
+.account-dropdown .account-buttons a:hover i {
+    color: white; /* Icon color change on hover */
+}
+
+/* Sidebar (Mobile) */
+.sidebar {
     display: none;
     position: fixed;
     top: 0;
@@ -74,95 +191,64 @@
     padding-top: 80px;
     z-index: 999;
     overflow-y: auto;
-  }
-  
-  .sidebar.active {
+}
+
+.sidebar.active {
     left: 0;
-  }
-  
-  .sidebar ul {
+}
+
+.sidebar ul {
     list-style: none;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  .sidebar li {
+}
+
+.sidebar li {
     margin: 20px 0;
-  }
-  
-  .sidebar a {
+}
+
+.sidebar a {
     color: white;
     font-size: 20px;
     text-decoration: none;
     transition: color 0.3s ease;
-  }
-  
-  .sidebar a:hover {
+}
+
+.sidebar a:hover {
     color: #f0a500;
-  }
-  
-  /* Prevent scrolling on the body when the sidebar is open */
-  .no-scroll {
+}
+
+/* Prevent scrolling on the body when the sidebar is open */
+.no-scroll {
     overflow: hidden;
-  }
-  
-  /* Account Dropdown (Desktop) */
-  .account-dropdown {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    padding: 10px 20px;
-    border-radius: 5px;
-    z-index: 999;
-  }
-  
-  .account-dropdown.active {
-    display: block;
-  }
-  
-  .account-dropdown a {
-    color: white;
-    font-size: 18px;
-    text-decoration: none;
-    display: block;
-    padding: 10px 0;
-  }
-  
-  .account-dropdown a:hover {
-    color: #f0a500;
-  }
-  
-  /* Media Queries for Mobile and Tablet */
-  @media (max-width: 768px) {
-    /* Hide the nav links on mobile */
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+    /* Hide Navigation Links on Mobile */
     .nav-links {
-      display: none;
+        display: none;
     }
-  
-    /* Show the hamburger menu on mobile */
+
+    /* Show Hamburger Menu on Mobile */
     .hamburger-menu {
-      display: flex;
+        display: flex;
     }
-  
-    /* Make the sidebar visible on mobile */
+
+    /* Hide Account Icon on Mobile */
+    .account-icon {
+        display: none;
+    }
+
+    /* Sidebar adjustments */
     .sidebar {
-      display: block;
+        display: block;
     }
-  
-    /* Hide the account icon on mobile */
-    .account-icon {
-      display: none;
+
+    /* Account Dropdown (Desktop Only) */
+    .account-dropdown {
+        display: none;
     }
-  }
-  
-  @media (min-width: 769px) {
-    /* Display the account icon on desktop */
-    .account-icon {
-      display: block;
-      cursor: pointer;
-    }
-  }  
+}

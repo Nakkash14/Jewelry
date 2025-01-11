@@ -4,39 +4,40 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
-  const [isAccountMenuOpen, setAccountMenuOpen] = useState(false);
+  const [isAccountDropdownOpen, setAccountDropdownOpen] = useState(false);
 
-  // Function to toggle the sidebar (mobile menu)
+  // Function to toggle the sidebar (hamburger menu)
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
   };
 
-  // Function to toggle the account menu (desktop)
-  const toggleAccountMenu = () => {
-    setAccountMenuOpen(!isAccountMenuOpen);
+  // Function to toggle account dropdown
+  const toggleAccountDropdown = () => {
+    setAccountDropdownOpen(!isAccountDropdownOpen);
   };
 
-  // Close the sidebar or account menu when a link is clicked
+  // Disable page scrolling when the sidebar or account dropdown is open
+  useEffect(() => {
+    if (isSidebarOpen || isAccountDropdownOpen) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+  }, [isSidebarOpen, isAccountDropdownOpen]);
+
+  // Close the sidebar when a link is clicked
   const closeSidebar = () => {
     setSidebarOpen(false);
-    setAccountMenuOpen(false);
   };
 
-  // Close the account menu if clicked outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (event.target.closest('.account-icon') === null && event.target.closest('.account-dropdown') === null) {
-        setAccountMenuOpen(false);
-      }
-    };
-    document.addEventListener('click', handleClickOutside);
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  }, []);
+  // Close the account dropdown when a link is clicked
+  const closeAccountDropdown = () => {
+    setAccountDropdownOpen(false);
+  };
 
   return (
     <div className="navbar-container">
+      {/* Navigation Bar */}
       <nav className="navbar">
         <div className="logo">
           <h1>Jewelry Store</h1>
@@ -50,26 +51,41 @@ const Navbar = () => {
           <Link to="/contact" onClick={closeSidebar}>Contact</Link>
         </div>
 
-        {/* Hamburger Menu (Visible only on mobile/tablet) */}
+        {/* Account Icon (Desktop Only) */}
+        <div className="account-icon" onClick={toggleAccountDropdown}>
+          <i className="fa fa-user"></i>
+        </div>
+
+        {/* Hamburger Menu (Mobile Only) */}
         <div className="hamburger-menu" onClick={toggleSidebar}>
           <div></div>
           <div></div>
           <div></div>
         </div>
-
-        {/* Account Icon (Visible only on desktop) */}
-        <div className="account-icon" onClick={toggleAccountMenu}>
-          <i className="fas fa-user"></i>
-        </div>
-
-        {/* Account Dropdown Menu (Visible only on desktop) */}
-        <div className={`account-dropdown ${isAccountMenuOpen ? 'active' : ''}`}>
-          <Link to="/signin" onClick={closeSidebar}>Sign In</Link>
-          <Link to="/signup" onClick={closeSidebar}>Sign Up</Link>
-        </div>
       </nav>
 
-      {/* Sidebar Menu (Only visible on mobile/tablet when hamburger menu is clicked) */}
+      {/* Account Dropdown (Desktop Only) */}
+      <div className={`account-dropdown ${isAccountDropdownOpen ? 'active' : ''}`}>
+        <div className="account-text">
+          If you have an account with us, you can buy jewelry
+        </div>
+        <div className="account-buttons">
+          <Link to="/signin" onClick={closeAccountDropdown}>
+            <i className="fa fa-sign-in"></i> Sign In
+          </Link>
+          <Link to="/signup" onClick={closeAccountDropdown}>
+            <i className="fa fa-user-plus"></i> Create Account
+          </Link>
+          <Link to="/profile" onClick={closeAccountDropdown}>
+            <i className="fa fa-cogs"></i> Profile Settings
+          </Link>
+          <Link to="/logout" onClick={closeAccountDropdown}>
+            <i className="fa fa-sign-out-alt"></i> Logout
+          </Link>
+        </div>
+      </div>
+
+      {/* Sidebar Menu (Mobile) */}
       <div className={`sidebar ${isSidebarOpen ? 'active' : ''}`}>
         <ul>
           <li><Link to="/" onClick={closeSidebar}>Home</Link></li>
