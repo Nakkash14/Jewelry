@@ -1,0 +1,155 @@
+/* Profile Container */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f8f8; /* Light background color to highlight content */
+}
+
+/* Profile Card Styling */
+.profile-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 450px;
+  width: 100%;
+  font-family: 'Georgia', serif; /* Elegant, serif font for a luxurious feel */
+  border: 1px solid #e0d9c6; /* Soft gold accent */
+}
+
+/* Profile Picture Container */
+.profile-pic-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+/* Profile Picture Styling */
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #d4af37; /* Gold border */
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1); /* Elegant shadow */
+}
+
+/* Profile Picture Upload Button */
+.profile-pic-upload {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: #fff;
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.profile-pic-upload:hover {
+  background-color: #f5e8b5; /* Soft gold hover effect */
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  color: #d4af37; /* Gold color for the icon */
+}
+
+/* User Information */
+.user-name {
+  font-size: 26px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+.user-email, .user-phone, .user-birthday, .user-location, .user-preferred-jewelry, .user-status, .user-address, .user-join-date {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* Extra Styling for Additional Labels */
+.user-birthday, .user-location, .user-preferred-jewelry {
+  font-style: italic;
+  color: #a1a1a1;
+}
+
+.user-status {
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Address and Join Date styling */
+.user-address {
+  font-style: italic;
+  color: #a1a1a1;
+  margin-top: 10px;
+}
+
+.user-join-date {
+  font-style: italic;
+  color: #a1a1a1;
+  margin-top: 5px;
+}
+
+/* Edit Button Styling */
+.edit-button {
+  background: #d4af37; /* Gold color for a luxurious touch */
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 30px; /* Rounded corners for an elegant feel */
+  cursor: pointer;
+  margin-top: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 200px;
+}
+
+.edit-button:hover {
+  background: #b98b2f; /* Slightly darker gold for hover effect */
+  transform: translateY(-3px);
+}
+
+.edit-button:focus {
+  outline: none;
+}
+
+/* Delete Button Styling */
+.delete-button {
+  background: Red; /* Red color for a luxurious touch */
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 30px; /* Rounded corners for an elegant feel */
+  cursor: pointer;
+  margin-top: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 200px;
+}
+
+.delete-button:hover {
+  background: #e63946; /* Slightly darker red for hover effect */
+  transform: translateY(-3px);
+}
+
+.eddeleteit-button:focus {
+  outline: none;
+}
+
+/* Optional: Fancy background for profile container */
+.profile-container {
+  background: linear-gradient(135deg, #f8f8f8, #fff4e1); /* Soft gradient for a high-end feel */
+}

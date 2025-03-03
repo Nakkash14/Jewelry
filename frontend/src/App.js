@@ -32,9 +32,10 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';  // Import React Router
 
 // Import the components for the pages
-import HomePage from './components/HomePage.jsx'; // Assuming HomePage.js is in the same folder
-import SignIn from './Auth/Sign_In'; // Adjust the path based on where your components are located
-import SignUp from './Auth/Sign_Up';
+import HomePage from './components/HomePage.jsx'; // Import Home Page
+import SignIn from './Auth/Sign_In'; // Import Sign In
+import SignUp from './Auth/Sign_Up'; // Import Sign Up
+import UserProfile from './User/UserProfile'; // Import User Profile
 import Navbar from './components/Navbar'; // Import Navbar
 
 const App = () => {
@@ -48,6 +49,7 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/userprofile" element={<UserProfile />} />
       </Routes>
     </Router>
   );

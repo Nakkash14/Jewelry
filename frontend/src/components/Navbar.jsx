@@ -76,7 +76,7 @@ const Navbar = () => {
           <Link to="/signup" onClick={closeAccountDropdown}>
             <i className="fa fa-user-plus"></i> Create Account
           </Link>
-          <Link to="/profile" onClick={closeAccountDropdown}>
+          <Link to="/userprofile" onClick={closeAccountDropdown}>
             <i className="fa fa-cogs"></i> Profile Settings
           </Link>
           <Link to="/logout" onClick={closeAccountDropdown}>
