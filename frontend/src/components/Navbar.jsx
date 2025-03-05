@@ -92,6 +92,8 @@ const Navbar = () => {
           <li><Link to="/shop" onClick={closeSidebar}>Shop</Link></li>
           <li><Link to="/about" onClick={closeSidebar}>About</Link></li>
           <li><Link to="/contact" onClick={closeSidebar}>Contact</Link></li>
+          <li></li>
+          <li><Link to="/userprofile" onClick={closeSidebar}>Profile Setings</Link></li>
         </ul>
       </div>
     </div>

@@ -36,6 +36,7 @@ import HomePage from './components/HomePage.jsx'; // Import Home Page
 import SignIn from './Auth/Sign_In'; // Import Sign In
 import SignUp from './Auth/Sign_Up'; // Import Sign Up
 import UserProfile from './User/UserProfile'; // Import User Profile
+import EditProfile from './User/EditProfile.jsx';
 import Navbar from './components/Navbar'; // Import Navbar
 
 const App = () => {
@@ -50,6 +51,7 @@ const App = () => {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/userprofile" element={<UserProfile />} />
+        <Route path="/edit-profile" element={<EditProfile />} />
       </Routes>
     </Router>
   );

@@ -1,9 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { CameraIcon } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+// import { CameraIcon } from "lucide-react";
 import "./UserProfile.css";
 
 const UserProfile = () => {
+  const navigate = useNavigate();
   const handleDeleteAccount = () => {
     const confirmDelete = window.confirm("Are you sure you want to delete your account? This action cannot be undone.");
     if (confirmDelete) {
@@ -37,7 +39,10 @@ const UserProfile = () => {
 
         {/* Buttons */}
         <div className="button-group">
-          <button className="edit-button">Edit Profile</button>
+          {/* <button className="edit-button">Edit Profile</button> */}
+          <button className="edit-button" onClick={() => navigate("/edit-profile")}>
+            Edit Profile
+          </button>
           <button className="delete-button" onClick={handleDeleteAccount}>Delete Account</button>
         </div>
       </div>
