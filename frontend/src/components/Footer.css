@@ -1,0 +1,146 @@
+/* Footer Styles */
+.footer {
+    background-color: #2d2a2a;
+    color: #fff;
+    padding: 50px 20px;
+    font-family: 'Georgia', serif; /* More classic font */
+    text-align: left; /* Left-aligned text for a more classic look */
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  /* Brand and Newsletter Section */
+  .footer-brand-newsletter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  
+  .footer-brand h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #f0a500;
+  }
+  
+  .footer-brand p {
+    font-size: 16px;
+    color: #ddd;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .footer-newsletter h4 {
+    font-size: 18px;
+    color: #f0a500;
+    margin-bottom: 15px;
+  }
+  
+  .footer-newsletter p {
+    font-size: 14px;
+    color: #ddd;
+    margin-bottom: 20px;
+  }
+  
+  .newsletter-form {
+    display: flex;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .newsletter-form input {
+    padding: 12px;
+    border: 1px solid #f0a500;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 80%;
+  }
+  
+  .newsletter-form button {
+    padding: 12px 25px;
+    background-color: #f0a500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .newsletter-form button:hover {
+    background-color: #e07b00;
+  }
+  
+  /* Footer Links */
+  .footer-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+  
+  .footer-column {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .footer-column h4 {
+    font-size: 18px;
+    color: #f0a500;
+    margin-bottom: 10px;
+  }
+  
+  .footer-column a {
+    display: block;
+    font-size: 16px;
+    color: #ddd;
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-column a:hover {
+    color: #f0a500;
+  }
+  
+  /* Social Media Icons */
+  .footer-column a i {
+    margin-right: 10px;
+    font-size: 20px;
+    color: #f0a500;
+  }
+  
+  .footer-column a:hover i {
+    color: #e07b00;
+  }
+  
+  /* Footer Bottom */
+  .footer-bottom {
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .footer-bottom p {
+    font-size: 14px;
+    color: #ddd;
+    font-family: 'Georgia', serif;
+    margin: 0;
+  }
+  
+  .footer-bottom p a {
+    color: #f0a500;
+    text-decoration: none;
+  }
+  
+  .footer-bottom p a:hover {
+    color: #e07b00;
+  }  
