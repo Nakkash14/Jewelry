@@ -46,9 +46,10 @@ const Navbar = () => {
         {/* Navigation Links (Visible only on desktop) */}
         <div className="nav-links">
           <Link to="/" onClick={closeSidebar}>Home</Link>
-          <Link to="/shop" onClick={closeSidebar}>Shop</Link>
-          <Link to="/about" onClick={closeSidebar}>About</Link>
+          <Link to="/shop" onClick={closeSidebar}>Personalize</Link>
+          <Link to="/about" onClick={closeSidebar}>Story</Link>
           <Link to="/contact" onClick={closeSidebar}>Contact</Link>
+          <Link to="#" onClick={closeSidebar}>Categories</Link>
         </div>
 
         {/* Account Icon (Desktop Only) */}
