@@ -7,9 +7,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background-color: #f5f5f5;
     padding: 20px;
-    color: white;
+    color: black;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -35,7 +35,7 @@
 }
 
 .nav-links a {
-    color: #fff;
+    color: black;
     text-decoration: none;
     font-size: 18px;
     margin-right: 20px;
@@ -60,7 +60,7 @@
 .hamburger-menu div {
     width: 30px;
     height: 4px;
-    background-color: white;
+    background-color: black;
 }
 
 /* Account Icon (Desktop Only) */
@@ -68,7 +68,7 @@
     display: block;
     cursor: pointer;
     font-size: 24px;
-    color: white;
+    color: black;
     margin-left: 20px;
     transition: color 0.3s ease; /* Smooth color transition */
 }

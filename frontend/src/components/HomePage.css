@@ -50,7 +50,7 @@ body {
 
 /* Jewelry Categories Section */
 .jewelry-categories {
-    background-color: #fff;
+    background-color: #f5f5f5;
     padding: 50px 20px;
     text-align: center;
 }
@@ -119,7 +119,7 @@ body {
 
 /* Recently Completed Projects Section */
 .recent-projects {
-    background-color: #f9f9f9;
+    background-color: white;
     padding: 50px 20px;
     text-align: center;
     position: relative;
@@ -269,4 +269,205 @@ body {
 .faq-item.open .faq-answer {
     max-height: 200px;
     padding-top: 10px;
+}
+
+
+
+
+
+
+/* Main Section Styles */
+.appointment-booking {
+  background-color: #f5f5f5;
+  padding: 50px 20px;
+  font-family: 'Georgia', serif;
+}
+
+/* Location Section Styles */
+.location-section {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 50px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.location-image {
+  width: 50%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.location-details {
+  width: 40%;
+}
+
+.location-details h2 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.location-details p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.locations {
+  margin-top: 20px;
+}
+
+.location-item {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.location-item h3 {
+  font-size: 24px;
+  color: #f0a500;
+  margin-bottom: 10px;
+}
+
+.location-item p {
+  font-size: 16px;
+  color: #555;
+}
+
+.location-item a {
+  color: #f0a500;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-block;
+  margin-top: 10px;
+  transition: color 0.3s ease;
+}
+
+.location-item a:hover {
+  color: #e07b00;
+}
+
+/* Schedule Section Styles */
+.schedule-section {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 50px;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse; /* Image on right */
+}
+
+.schedule-image {
+  width: 50%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.schedule-details {
+  width: 40%;
+}
+
+.schedule-details h2 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.schedule-details p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Appointment Form Styles */
+.appointment-form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.appointment-form label {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.appointment-form select,
+.appointment-form input[type="date"],
+.appointment-form input[type="time"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  transition: border-color 0.3s ease;
+}
+
+.appointment-form select:focus,
+.appointment-form input[type="date"]:focus,
+.appointment-form input[type="time"]:focus {
+  border-color: #f0a500;
+  outline: none;
+}
+
+.appointment-form button {
+  padding: 14px 20px;
+  background-color: #f0a500;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.appointment-form button:hover {
+  background-color: #e07b00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .location-section,
+  .schedule-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .location-image,
+  .schedule-image {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .location-details,
+  .schedule-details {
+    width: 80%;
+  }
+
+  .appointment-form {
+    padding: 20px;
+  }
+
+  .appointment-form input[type="date"],
+  .appointment-form input[type="time"],
+  .appointment-form select {
+    font-size: 14px;
+  }
+
+  .appointment-form button {
+    font-size: 14px;
+    padding: 12px 20px;
+  }
 }
