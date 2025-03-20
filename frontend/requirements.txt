@@ -4,3 +4,4 @@ npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
 npm install flatpickr
 npm install react-datepicker
 npm install react-time-picker
+npm install react-icons

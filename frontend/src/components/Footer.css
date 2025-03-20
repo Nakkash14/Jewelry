@@ -51,6 +51,10 @@ footer hr {
   width: 100%;
 }
 
+.footer-newsletter p {
+  color: black;
+}
+
 .footer-newsletter h4 {
   font-size: 18px;
   color: #f0a500;

@@ -1,0 +1,126 @@
+/* Best Projects Section */
+.best-projects {
+    background: linear-gradient(135deg, #fff5e1, #fef8f3);
+    padding: 90px 20px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.best-projects h2 {
+    font-size: 42px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.project-subtitle {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+/* Grid Layout */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+/* Project Card */
+.project-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    padding-bottom: 20px;
+    width: 100%; /* Ensures full width usage */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(240, 165, 0, 0.4);
+}
+
+/* Image Container */
+.image-container {
+    position: relative;
+    width: 100%; /* Ensures image takes full width */
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.project-image {
+    width: 100%; /* Ensures image fills the container */
+    height: auto;
+    max-width: 100%;
+    object-fit: cover; /* Ensures image covers full space */
+    transition: transform 0.5s ease-in-out;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.08);
+}
+
+/* Overlay Effect */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.project-card:hover .overlay {
+    opacity: 1;
+}
+
+/* Overlay Content */
+.overlay-content h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #f8c471;
+}
+
+.overlay-content p {
+    font-size: 18px;
+    color: #fdfdfd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        width: 100%;
+    }
+
+    .image-container {
+        height: auto;
+    }
+}

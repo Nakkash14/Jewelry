@@ -1,0 +1,268 @@
+/* ============================ */
+/*       Global Styling         */
+/* ============================ */
+.appointment-container {
+    font-family: 'Playfair Display', serif;
+    background-color: #faf8f5;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  /* ============================ */
+  /*         Title & Subtitle     */
+  /* ============================ */
+  .appointment-title {
+    font-size: 44px;
+    font-weight: bold;
+    color: #2c2c2c;
+    margin-bottom: 10px;
+  }
+  
+  .appointment-subtitle {
+    font-size: 20px;
+    color: #777;
+    margin-bottom: 50px;
+  }
+  
+  /* ============================ */
+  /*      Boutique Locations      */
+  /* ============================ */
+  .location-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 60px 12%;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+  }
+  
+  .location-image {
+    width: 45%;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .location-image:hover {
+    transform: scale(1.02);
+  }
+  
+  .location-info {
+    width: 50%;
+    text-align: left;
+  }
+  
+  .location-info h2 {
+    font-size: 32px;
+    color: #2c2c2c;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .location-info p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+  
+  /* Boutique Cards */
+  .locations {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .location-card {
+    background: #fdf8f2;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .location-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Boutique Icons */
+  .location-icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  
+  /* Boutique Headings */
+  .location-card h3 {
+    color: #b89060;
+    font-size: 22px;
+    margin-bottom: 5px;
+  }
+  
+  /* Boutique Details */
+  .location-card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 8px;
+  }
+  
+  /* Boutique Map Link */
+  .location-card a {
+    display: inline-block;
+    font-size: 16px;
+    color: #a67c52;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .location-card a:hover {
+    color: #8c6239;
+  }
+  
+  /* ============================ */
+  /*       Booking Section        */
+  /* ============================ */
+  .schedule-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 60px 12%;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+  }
+  
+  .schedule-image {
+    width: 45%;
+    border-radius: 12px;
+  }
+  
+  .schedule-info {
+    width: 50%;
+    text-align: left;
+  }
+  
+  /* ============================ */
+  /*       Appointment Form       */
+  /* ============================ */
+  .appointment-form {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .appointment-form label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin: 10px 0;
+  }
+  
+  .datepicker,
+  .appointment-form select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #c49a6c;
+    border-radius: 6px;
+    margin-bottom: 20px;
+  }
+  
+  /* ============================ */
+  /*       Time Slot Selection    */
+  /* ============================ */
+  .time-slot-wrapper {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 0;
+    white-space: nowrap;
+  }
+  
+  .time-slot {
+    background: #f5ede1;
+    border: 1px solid #c49a6c;
+    border-radius: 25px;
+    padding: 14px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .time-slot:hover {
+    background: #e5d4c1;
+  }
+  
+  .time-slot.selected {
+    background: #c49a6c;
+    color: white;
+    border: none;
+  }
+  
+  /* ============================ */
+  /*       Reserve Button         */
+  /* ============================ */
+  .confirm-btn {
+    background: linear-gradient(135deg, #e3c08d, #b89060);
+    color: #fff;
+    border: none;
+    padding: 16px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    font-family: 'Playfair Display', serif;
+  }
+  
+  /* Hover Effects */
+  .confirm-btn:hover {
+    background: linear-gradient(135deg, #b89060, #8b6b3b);
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Active Click Effect */
+  .confirm-btn:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* ============================ */
+  /*      Mobile Responsive       */
+  /* ============================ */
+  @media (max-width: 768px) {
+    .location-section,
+    .schedule-section {
+      flex-direction: column;
+      text-align: center;
+      padding: 40px 5%;
+    }
+  
+    .location-image,
+    .schedule-image {
+      width: 100%;
+    }
+  
+    .location-info,
+    .schedule-info {
+      width: 100%;
+    }
+  
+    .confirm-btn {
+      padding: 14px;
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+  }  

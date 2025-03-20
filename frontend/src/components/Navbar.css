@@ -1,196 +1,141 @@
-/* General Navbar Styles */
+/* Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Navbar Container */
 .navbar-container {
+    width: 100%;
     position: relative;
 }
 
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f5f5f5;
-    padding: 20px;
-    color: black;
+    background: white;
+    padding: 15px 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-.navbar .logo h1 {
-    font-size: 24px;
+/* Logo */
+.nav-left .logo h1 {
+    font-size: 26px;
     font-weight: bold;
     margin: 0;
+    color: #1a1a1a;
+    transition: transform 0.3s ease;
 }
 
-/* Navigation Links (Desktop) */
-.nav-links {
-    list-style-type: none;
+.nav-left .logo h1:hover {
+    transform: scale(1.05);
+}
+
+/* Navigation Links */
+.nav-right {
     display: flex;
-    justify-content: space-between;
-    padding: 0;
-    margin-left: 20px;
+    align-items: center;
+    gap: 20px;
 }
 
-.nav-links li {
-    margin-left: 30px;
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
 }
 
 .nav-links a {
-    color: black;
+    color: #1a1a1a;
     text-decoration: none;
     font-size: 18px;
-    margin-right: 20px;
-    transition: color 0.3s ease;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Modern Hover Effect */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #c49a6c;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
 }
 
 .nav-links a:hover {
-    color: #f0a500;
+    color: #c49a6c;
 }
 
-/* Hamburger Menu (Mobile) */
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Navbar Icons */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Account Icon */
+.account-icon {
+    cursor: pointer;
+    font-size: 22px;
+    color: #1a1a1a;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.account-icon:hover {
+    color: #c49a6c;
+    transform: scale(1.1);
+}
+
+/* Hamburger Menu */
 .hamburger-menu {
     display: none;
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    transition: all 0.3s ease;
 }
 
-.hamburger-menu div {
-    width: 30px;
-    height: 4px;
-    background-color: black;
+.hamburger-menu span {
+    width: 28px;
+    height: 3px;
+    background-color: #1a1a1a;
+    transition: all 0.3s ease;
 }
 
-/* Account Icon (Desktop Only) */
-.account-icon {
-    display: block;
-    cursor: pointer;
-    font-size: 24px;
-    color: black;
-    margin-left: 20px;
-    transition: color 0.3s ease; /* Smooth color transition */
+.hamburger-menu:hover span {
+    background-color: #c49a6c;
 }
 
-/* When the account icon is hovered or focused */
-.account-icon:hover, .account-icon:focus {
-    color: #f0a500; /* Change to a contrasting color (yellow) */
-}
-
-/* Account Dropdown Links */
-.account-buttons a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    display: block;
-    margin: 10px 0;
-    transition: color 0.3s ease;
-}
-
-/* Hover effect on the account dropdown links */
-.account-buttons a:hover {
-    color: #f0a500; /* Change the color to yellow when hovered */
-}
-
-/* Account Dropdown Icons */
-.account-buttons i {
-    color: white; /* Default color */
-    margin-right: 10px;
-    transition: color 0.3s ease; /* Smooth color transition */
-}
-
-/* Hover effect on account dropdown icons */
-.account-buttons a:hover i {
-    color: #f0a500; /* Change icon color to yellow when hovered */
-}
-
-/* Account Dropdown (From Right Side, Like Sidebar) */
-.account-dropdown {
-    position: fixed;
-    top: 0;
-    right: -400px; /* Initially hidden off-screen to the right */
-    background-color: rgba(0, 0, 0, 0.9);
-    width: 400px;
-    height: 100%;
-    padding: 20px;
-    z-index: 999;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: right 0.3s ease-in-out, visibility 0s 0.3s; /* Smooth transition for sliding in and out */
-    visibility: hidden; /* Ensure it's hidden initially */
-    padding-top: 150px; /* Adjusted for better positioning */
-}
-
-.account-dropdown.active {
-    right: 0; /* Slide in from the right */
-    visibility: visible; /* Make it visible when active */
-    transition: right 0.3s ease-in-out, visibility 0s 0s; /* Smooth transition for opening */
-}
-
-.account-dropdown a {
-    color: white;
-    font-size: 18px;
-    text-decoration: none;
-    display: block;
-    padding: 12px 15px;
-    margin-bottom: 15px;
-    border-radius: 50px; /* Rounded edges for buttons */
-    background-color: #444;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Added transform for hover effect */
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    gap: 10px; /* Space between text and icon */
-}
-
-/* Hover effect with glow */
-.account-dropdown a:hover {
-    background-color: #f0a500;
-    color: white;
-    transform: scale(1.05); /* Subtle grow effect */
-}
-
-/* Account dropdown text */
-.account-dropdown .account-text {
-    color: #fff;
-    font-size: 20px;
-    margin-bottom: 30px;
-    text-align: center;
-    font-weight: 500;
-}
-
-.account-dropdown .account-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-/* Icons inside the account dropdown */
-.account-dropdown .account-buttons a i {
-    font-size: 22px; /* Slightly bigger icon size */
-    color: #fff;
-    transition: color 0.3s ease;
-}
-
-/* Button hover effects */
-.account-dropdown .account-buttons a:hover i {
-    color: white; /* Icon color change on hover */
-}
-
-/* Sidebar (Mobile) */
+/* ✅ Sidebar (Mobile Menu) */
 .sidebar {
-    display: none;
     position: fixed;
     top: 0;
     left: -100%;
-    width: 70%;
+    width: 250px;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    transition: left 0.3s ease;
-    padding-top: 80px;
-    z-index: 999;
-    overflow-y: auto;
+    background: white;
+    padding: 40px 20px;
+    transition: left 0.4s ease-in-out;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar.active {
@@ -200,55 +145,95 @@
 .sidebar ul {
     list-style: none;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .sidebar li {
-    margin: 20px 0;
+    padding: 15px 0;
 }
 
 .sidebar a {
-    color: white;
-    font-size: 20px;
+    color: #1a1a1a;
     text-decoration: none;
-    transition: color 0.3s ease;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    transition: all 0.3s ease-in-out;
 }
 
 .sidebar a:hover {
-    color: #f0a500;
+    color: #c49a6c;
 }
 
-/* Prevent scrolling on the body when the sidebar is open */
-.no-scroll {
-    overflow: hidden;
+/* ✅ Account Dropdown */
+.account-dropdown {
+    position: fixed;
+    /* top: 1; */
+    right: -350px;
+    width: 300px;
+    height: 100%;
+    background: white;
+    padding: 20px 20px;
+    transition: right 0.4s ease-in-out;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Media Query for Mobile */
+.account-dropdown.active {
+    right: 0;
+}
+
+/* Account Menu */
+.account-menu {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.account-menu p {
+    color: #1a1a1a;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Account Buttons */
+.account-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #c49a6c;
+    color: white;
+    padding: 12px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* ✅ Button Hover Effect */
+.account-btn:hover {
+    background: #b08255;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Responsive */
 @media (max-width: 768px) {
-    /* Hide Navigation Links on Mobile */
     .nav-links {
         display: none;
     }
-
-    /* Show Hamburger Menu on Mobile */
+    
     .hamburger-menu {
         display: flex;
     }
 
-    /* Hide Account Icon on Mobile */
-    .account-icon {
-        display: none;
-    }
-
-    /* Sidebar adjustments */
     .sidebar {
         display: block;
     }
 
-    /* Account Dropdown (Desktop Only) */
-    .account-dropdown {
+    .account-icon {
         display: none;
     }
 }
