@@ -1,5 +1,6 @@
-// import React from "react";
+// import React, { useRef } from "react";
 // import { motion } from "framer-motion";
+// import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 // import "./BestProjects.css";
 
 // // Import images for best projects
@@ -24,50 +25,65 @@
 //     image: BestProject3,
 //   },
 //   {
-//     title: "Elegant Diamond Ring",
-//     description: "14K white gold with a premium-cut diamond for timeless beauty.",
+//     title: "Luxury Platinum Band",
+//     description: "Timeless platinum wedding band with a minimalist design.",
 //     image: BestProject1,
 //   },
 // ];
 
 // const BestProjects = () => {
+//   const scrollRef = useRef(null);
+
+//   const scrollLeft = () => {
+//     scrollRef.current.scrollBy({ left: -350, behavior: "smooth" });
+//   };
+
+//   const scrollRight = () => {
+//     scrollRef.current.scrollBy({ left: 350, behavior: "smooth" });
+//   };
+
 //   return (
-//     <section className="best-projects">
+//     <section className="best-projectss">
 //       <h2>Our Best Creations</h2>
-//       <p className="project-subtitle">Exquisite craftsmanship in every piece.</p>
-//       <div className="project-grid">
-//         {bestProjects.map((project, index) => (
-//           <motion.div 
-//             key={index} 
-//             className="project-card"
-//             whileHover={{ scale: 1.05 }}
-//             whileTap={{ scale: 0.98 }}
-//           >
-//             <div className="image-container">
-//               <img src={project.image} alt={project.title} className="project-image" />
-//               <div className="overlay">
-//                 <div className="overlay-content">
-//                   <h3>{project.title}</h3>
-//                   <p>{project.description}</p>
+//       <p className="project-subtitlee">Exquisite craftsmanship in every piece.</p>
+      
+//       <div className="scroll-wrapperr">
+//         <button className="scroll-btnn leftt" onClick={scrollLeft}>
+//           <FaChevronLeft />
+//         </button>
+
+//         <div className="scroll-containerr" ref={scrollRef}>
+//           <div className="project-gridd">
+//             {bestProjects.map((project, index) => (
+//               <motion.div 
+//                 key={index} 
+//                 className="project-cardd"
+//                 whileHover={{ scale: 1.05 }}
+//                 whileTap={{ scale: 0.98 }}
+//               >
+//                 <div className="image-containerr">
+//                   <img src={project.image} alt={project.title} className="project-imagee" />
+//                   <div className="overlayy">
+//                     <div className="overlay-contentt">
+//                       <h3>{project.title}</h3>
+//                       <p>{project.description}</p>
+//                     </div>
+//                   </div>
 //                 </div>
-//               </div>
-//             </div>
-//           </motion.div>
-//         ))}
+//               </motion.div>
+//             ))}
+//           </div>
+//         </div>
+
+//         <button className="scroll-btnn rightt" onClick={scrollRight}>
+//           <FaChevronRight />
+//         </button>
 //       </div>
 //     </section>
 //   );
 // };
 
 // export default BestProjects;
-
-
-
-
-
-
-
-
 
 
 
@@ -117,28 +133,28 @@ const BestProjects = () => {
   };
 
   return (
-    <section className="best-projects">
+    <section className="best-projects-section">
       <h2>Our Best Creations</h2>
-      <p className="project-subtitle">Exquisite craftsmanship in every piece.</p>
+      <p className="best-project-subtitle">Exquisite craftsmanship in every piece.</p>
       
-      <div className="scroll-wrapper">
-        <button className="scroll-btn left" onClick={scrollLeft}>
+      <div className="best-scroll-wrapper">
+        <button className="best-scroll-btn left" onClick={scrollLeft}>
           <FaChevronLeft />
         </button>
 
-        <div className="scroll-container" ref={scrollRef}>
-          <div className="project-grid">
+        <div className="best-scroll-container" ref={scrollRef}>
+          <div className="best-project-grid">
             {bestProjects.map((project, index) => (
               <motion.div 
                 key={index} 
-                className="project-card"
+                className="best-project-card"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <div className="image-container">
-                  <img src={project.image} alt={project.title} className="project-image" />
-                  <div className="overlay">
-                    <div className="overlay-content">
+                <div className="best-image-container">
+                  <img src={project.image} alt={project.title} className="best-project-image" />
+                  <div className="best-overlay">
+                    <div className="best-overlay-content">
                       <h3>{project.title}</h3>
                       <p>{project.description}</p>
                     </div>
@@ -149,7 +165,7 @@ const BestProjects = () => {
           </div>
         </div>
 
-        <button className="scroll-btn right" onClick={scrollRight}>
+        <button className="best-scroll-btn right" onClick={scrollRight}>
           <FaChevronRight />
         </button>
       </div>

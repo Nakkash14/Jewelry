@@ -1,201 +1,209 @@
 /* Best Projects Section */
-.best-projects {
+.best-projects-section {
     background: linear-gradient(135deg, #fff5e1, #fef8f3);
     padding: 90px 20px;
     text-align: center;
     font-family: 'Poppins', sans-serif;
+    position: relative;
 }
 
-.best-projects h2 {
+.best-projects-section h2 {
     font-size: 42px;
     font-weight: bold;
-    color: #333;
+    color: #222;
     margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.project-subtitle {
-    font-size: 20px;
-    color: #666;
+.best-project-subtitle {
+    font-size: 22px;
+    color: #555;
     margin-bottom: 50px;
+    font-weight: 500;
 }
 
 /* Scroll Wrapper */
-.scroll-wrapper {
+.best-scroll-wrapper {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 /* Scrollable Container */
-.scroll-container {
+.best-scroll-container {
     overflow-x: auto;
-    white-space: nowrap;
-    scroll-behavior: smooth;
-    padding: 10px;
     display: flex;
-    width: 90%;
+    padding: 15px 0;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    width: 85%;
 }
 
 /* Hide Scrollbar */
-.scroll-container::-webkit-scrollbar {
+.best-scroll-container::-webkit-scrollbar {
     display: none;
 }
 
 /* Project Grid */
-.project-grid {
+.best-project-grid {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     flex-wrap: nowrap;
 }
 
 /* Project Card */
-.project-card {
-    min-width: 350px; /* Ensures proper sizing */
-    flex: 0 0 auto;
+.best-project-card {
+    min-width: 400px;
+    max-width: 400px;
     background: white;
-    border-radius: 15px;
+    border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
     position: relative;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    padding-bottom: 20px;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.project-card:hover {
+.best-project-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(240, 165, 0, 0.4);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* Image Container */
-.image-container {
-    position: relative;
+.best-image-container {
     width: 100%;
-    max-width: 100%;
-    height: auto;
+    height: 320px;
     overflow: hidden;
-    border-radius: 15px;
+    border-radius: 18px 18px 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #fff;
+    background: #f9f9f9;
+    position: relative;
 }
 
-.project-image {
+.best-project-image {
     width: 100%;
-    height: auto;
-    max-width: 100%;
+    height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.4s ease-in-out;
 }
 
-.project-card:hover .project-image {
+.best-project-card:hover .best-project-image {
     transform: scale(1.08);
 }
 
-/* Overlay Effect */
-.overlay {
+/* Overlay Effect (Appears on Hover) */
+.best-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Darker for better readability */
+    background: rgba(0, 0, 0, 0.75);
     opacity: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
-    padding: 15px;
+    padding: 20px;
     transition: opacity 0.4s ease-in-out;
-    flex-direction: column; /* Stack elements properly */
+    flex-direction: column;
 }
 
-/* Ensure overlay is fully visible */
-.project-card:hover .overlay {
+/* Ensure overlay appears fully on hover */
+.best-project-card:hover .best-overlay {
     opacity: 1;
-    display: flex;
 }
 
 /* Overlay Content */
-.overlay-content {
-    width: 90%; /* Ensure it does not touch the edges */
-    max-height: 100%;
-    overflow-y: auto; /* Enable scrolling for long text */
+.best-overlay-content {
+    width: 90%;
     text-align: center;
-    padding: 10px;
 }
 
-/* Adjust title */
-.overlay-content h3 {
-    font-size: 20px;
+/* Title (Now Fully Visible) */
+.best-overlay-content h3 {
+    font-size: 22px;
     font-weight: bold;
     margin-bottom: 10px;
     color: #f8c471;
-    white-space: normal; /* Allow line breaks */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: normal; /* Allow title to break lines */
     word-wrap: break-word;
+    max-width: 100%; /* Ensure title fits within card */
 }
 
-/* Adjust description */
-.overlay-content p {
-    font-size: 16px;
+/* Description */
+.best-overlay-content p {
+    font-size: 18px;
     color: #fdfdfd;
-    white-space: normal; /* Ensures text wraps */
-    overflow: hidden;
-    text-overflow: ellipsis; /* Adds "..." for overflow */
-    max-height: 100px; /* Ensures no excessive overlap */
-    line-height: 1.4;
-}
-
-/* Allow scrolling inside overlay for very long descriptions */
-.overlay:hover {
-    overflow-y: auto;
+    white-space: normal;
+    line-height: 1.5;
 }
 
 /* Scroll Buttons */
-.scroll-btn {
+.best-scroll-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.9);
     color: white;
     border: none;
-    padding: 10px;
+    padding: 16px;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 28px;
     border-radius: 50%;
     z-index: 10;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
-.scroll-btn.left {
-    left: 10px;
+.best-scroll-btn.left {
+    left: 20px;
 }
 
-.scroll-btn.right {
-    right: 10px;
+.best-scroll-btn.right {
+    right: 20px;
 }
 
-.scroll-btn:hover {
-    background: rgba(0, 0, 0, 0.8);
+.best-scroll-btn:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: scale(1.1);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .scroll-container {
-        width: 100%;
+    .best-scroll-container {
+        width: 95%;
     }
 
-    .scroll-btn {
+    .best-scroll-btn {
+        font-size: 24px;
+        padding: 14px;
+    }
+
+    .best-project-card {
+        min-width: 350px;
+        max-width: 350px;
+    }
+
+    .best-image-container {
+        height: 270px;
+    }
+
+    .best-overlay-content h3 {
         font-size: 20px;
-        padding: 8px;
     }
 
-    .overlay-content p {
-        font-size: 14px;
+    .best-overlay-content p {
+        font-size: 16px;
     }
 }

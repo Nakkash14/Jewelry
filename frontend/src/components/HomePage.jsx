@@ -10,15 +10,16 @@ import Ring from '../Images/Ring.jpeg';
 import Silver_Bracelet from '../Images/Silver_Bracelet.jpeg';
 import Necklace from '../Images/Necklace.jpeg';
 import Background_HomePage from '../Images/Background_HomePage.jpeg';
-import CustomRing from '../Images/CustomRing.avif';
-import CustomBracelet from '../Images/CustomBracelet.webp';
-import CustomNecklace from '../Images/CustomNecklace.jpeg';
+// import CustomRing from '../Images/CustomRing.avif';
+// import CustomBracelet from '../Images/CustomBracelet.webp';
+// import CustomNecklace from '../Images/CustomNecklace.jpeg';
 // import location from '../Images/location.jpg';
 // import appointmentImage from '../Images/appointment.jpg';
 import TestimonialsPage from '../includeInHome/Testimonials';
 import FAQPage from '../includeInHome/FAQ';
 import BestProjects from '../includeInHome/BestProjects';
 import Appointment from '../includeInHome/Appointment';
+import RecentProjects from '../includeInHome/RecentProjects';
 
 const HomePage = () => {
   // const [time, setTime] = useState();
@@ -77,31 +78,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Recently Completed Projects */}
-      <section className="recent-projects">
-        <h2>Our Latest Projects</h2>
-        <div className="projects-list-wrapper">
-          <div className="projects-list">
-            <div className="project-card">
-              <img src={CustomRing} alt="Custom Diamond Ring" />
-              <h3>Elegant Custom Diamond Ring</h3>
-              <p>A stunning custom-made diamond ring set in 14K white gold, designed for timeless elegance.</p>
-            </div>
-
-            <div className="project-card">
-              <img src={CustomBracelet} alt="Handcrafted Silver Bracelet" />
-              <h3>Handcrafted Silver Bracelet</h3>
-              <p>This intricately designed bracelet features pure silver links, each crafted with precision.</p>
-            </div>
-
-            <div className="project-card">
-              <img src={CustomNecklace} alt="Gold Pendant Necklace" />
-              <h3>Gold Pendant Necklace</h3>
-              <p>A 10K gold pendant with a cultured freshwater pearl and a small blue sapphire accent.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+    <RecentProjects />
 
     <Appointment />
 
