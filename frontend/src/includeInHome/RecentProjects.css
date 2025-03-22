@@ -6,6 +6,7 @@
     font-family: 'Poppins', sans-serif;
     position: relative;
     overflow: hidden;
+    z-index: 1;
 }
 
 .recent-projects h2 {

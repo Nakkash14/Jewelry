@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './HomePage.css';
 import { Link } from 'react-router-dom';
-import flatpickr from 'flatpickr';
+// import flatpickr from 'flatpickr';
 // import TimePicker from 'react-time-picker';
 // import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "flatpickr/dist/flatpickr.min.css";
-import Ring from '../Images/Ring.jpeg';
-import Silver_Bracelet from '../Images/Silver_Bracelet.jpeg';
-import Necklace from '../Images/Necklace.jpeg';
+// import Ring from '../Images/Ring.jpeg';
+// import Silver_Bracelet from '../Images/Silver_Bracelet.jpeg';
+// import Necklace from '../Images/Necklace.jpeg';
 import Background_HomePage from '../Images/Background_HomePage.jpeg';
 // import CustomRing from '../Images/CustomRing.avif';
 // import CustomBracelet from '../Images/CustomBracelet.webp';
@@ -20,27 +20,28 @@ import FAQPage from '../includeInHome/FAQ';
 import BestProjects from '../includeInHome/BestProjects';
 import Appointment from '../includeInHome/Appointment';
 import RecentProjects from '../includeInHome/RecentProjects';
+import JewelryCategories from '../includeInHome/JewelryCategories';
 
 const HomePage = () => {
   // const [time, setTime] = useState();
   // const [date, setDate] = useState(new Date());
 
-  useEffect(() => {
-    flatpickr("#datepicker", {
-      dateFormat: "Y-m-d",
-      minDate: "today",
-      locale: "en",
-      theme: "light"
-    });
+  // useEffect(() => {
+  //   flatpickr("#datepicker", {
+  //     dateFormat: "Y-m-d",
+  //     minDate: "today",
+  //     locale: "en",
+  //     theme: "light"
+  //   });
 
-    flatpickr("#timepicker", {
-      enableTime: true,
-      noCalendar: true,
-      dateFormat: "H:i",
-      minDate: "today",
-      theme: "light"
-    });
-  }, []);
+  //   flatpickr("#timepicker", {
+  //     enableTime: true,
+  //     noCalendar: true,
+  //     dateFormat: "H:i",
+  //     minDate: "today",
+  //     theme: "light"
+  //   });
+  // }, []);
 
   return (
     <div className="homepage">
@@ -53,30 +54,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Jewelry Categories Section */}
-      <section className="jewelry-categories">
-        <h2>Jewelry Categories</h2>
-        <div className="category-list">
-          <div className="category-card">
-            <img src={Ring} alt="Rings" />
-            <div className="category-btn-wrapper">
-              <Link to="/shop/rings" className="category-btn">Explore Rings</Link>
-            </div>
-          </div>
-          <div className="category-card">
-            <img src={Silver_Bracelet} alt="Bracelets" />
-            <div className="category-btn-wrapper">
-              <Link to="/shop/bracelets" className="category-btn">Explore Bracelets</Link>
-            </div>
-          </div>
-          <div className="category-card">
-            <img src={Necklace} alt="Necklaces" />
-            <div className="category-btn-wrapper">
-              <Link to="/shop/necklaces" className="category-btn">Explore Necklaces</Link>
-            </div>
-          </div>
-        </div>
-      </section>
+    <JewelryCategories />
 
     <RecentProjects />
 

@@ -3,7 +3,8 @@
 /* ============================ */
 .appointment-container {
     font-family: 'Playfair Display', serif;
-    background-color: #faf8f5;
+    /* background-color: #faf8f5; */
+    background: linear-gradient(135deg, #fffdfa, #f5eee5);
     padding: 80px 20px;
     text-align: center;
   }

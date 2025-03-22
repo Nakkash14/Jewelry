@@ -8,12 +8,12 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f9f9f9;
+    padding-top: 75px; /* Adjusted to match navbar height */
 }
 
 /* Navbar Container */
 .navbar-container {
     width: 100%;
-    position: relative;
 }
 
 /* Navbar */
@@ -24,8 +24,10 @@ body {
     background: white;
     padding: 15px 30px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
 }
 
@@ -64,7 +66,6 @@ body {
     transition: color 0.3s ease-in-out;
 }
 
-/* Modern Hover Effect */
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -92,7 +93,6 @@ body {
     gap: 15px;
 }
 
-/* Account Icon */
 .account-icon {
     cursor: pointer;
     font-size: 22px;
@@ -125,17 +125,18 @@ body {
     background-color: #c49a6c;
 }
 
-/* ✅ Sidebar (Mobile Menu) */
+/* Sidebar (Mobile Menu) */
 .sidebar {
     position: fixed;
-    top: 0;
+    top: 75px;
     left: -100%;
     width: 250px;
-    height: 100%;
+    height: calc(100% - 75px);
     background: white;
     padding: 40px 20px;
     transition: left 0.4s ease-in-out;
     box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
 }
 
 .sidebar.active {
@@ -164,24 +165,25 @@ body {
     color: #c49a6c;
 }
 
-/* ✅ Account Dropdown */
+/* Account Dropdown */
 .account-dropdown {
     position: fixed;
-    /* top: 1; */
+    top: 60px;
     right: -350px;
     width: 300px;
-    height: 100%;
+    height: calc(100% - 60px);
     background: white;
-    padding: 20px 20px;
+    padding: 20px;
     transition: right 0.4s ease-in-out;
     box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #f0f0f0;
+    z-index: 999;
 }
 
 .account-dropdown.active {
     right: 0;
 }
 
-/* Account Menu */
 .account-menu {
     text-align: center;
     padding-top: 20px;
@@ -194,7 +196,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* Account Buttons */
 .account-btn {
     display: flex;
     align-items: center;
@@ -212,7 +213,6 @@ body {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
-/* ✅ Button Hover Effect */
 .account-btn:hover {
     background: #b08255;
     transform: scale(1.05);
@@ -224,7 +224,7 @@ body {
     .nav-links {
         display: none;
     }
-    
+
     .hamburger-menu {
         display: flex;
     }

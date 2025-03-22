@@ -1,7 +1,8 @@
 /* FAQ Section */
 .faq-section {
     /* background: linear-gradient(135deg, #fffaf0, #ffffff); */
-    background-color: white;
+    /* background-color: white; */
+    background: linear-gradient(135deg, #fffdfa, #f5eee5);
     padding: 70px 20px;
     text-align: center;
     font-family: 'Poppins', sans-serif;
