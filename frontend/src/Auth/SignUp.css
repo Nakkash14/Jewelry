@@ -1,169 +1,150 @@
-/* Full page container to hold both sides */
-.signup-container {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
+/* === Reset === */
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  background: linear-gradient(145deg, #faf8f6, #f0ecec);
-  font-family: 'Roboto', sans-serif;
 }
 
-/* Left side: Sign In prompt */
-.signup-left {
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #fdfcfb, #e4d9c5);
+  color: #333;
+}
+
+/* === Wrapper === */
+.auth-wrapper {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: stretch;
+  padding: 40px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* === Auth Card === */
+.auth-card {
   flex: 1;
-  padding: 50px;
-  background-color: #ffffff;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
+  min-width: 320px;
+  max-width: 480px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  padding: 40px 30px;
+  transition: transform 0.4s ease;
 }
 
-.signup-left h2 {
-  font-size: 22px;
-  color: #333;
+.auth-card:hover {
+  transform: translateY(-5px);
+}
+
+.auth-card .content {
+  text-align: center;
+}
+
+/* === Typography === */
+.auth-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #bfa46f;
   margin-bottom: 10px;
-  font-weight: 500;
 }
 
-.signup-left p {
+.auth-card p {
   font-size: 16px;
   color: #666;
   margin-bottom: 30px;
 }
 
-.signin-button {
-  background-color: #d4af37;
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
-}
-
-.signin-button a {
-  color: white;
-  text-decoration: none;
-}
-
-.signin-button:hover {
-  background-color: #b3942e;
-}
-
-/* Divider line between SignUp and SignIn sections */
-.divider {
-  width: 2px;
-  background-color: #d4af37;
-  height: 100%;
-}
-
-/* Right section: SignUp form */
-.signup-right {
-  flex: 1;
-  padding: 50px;
-  background-color: #ffffff;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-  text-align: center;
+/* === Form === */
+.form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  gap: 20px;
 }
 
-h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  color: #d4af37;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.signup-form {
-  width: 100%;
-  max-width: 450px;
-  margin-top: 30px;
-}
-
-.form-group {
-  margin-bottom: 25px;
-  width: 100%;
-}
-
-/* Style for inputs with floating labels */
-.input-container {
+.input-group {
   position: relative;
-  margin-bottom: 15px;
 }
 
-.input-container input {
+.input-group input {
   width: 100%;
-  padding: 14px 20px;
-  border: 1px solid #ddd;
+  padding: 14px 16px;
+  border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 16px;
-  font-weight: 400;
-  transition: all 0.3s ease;
-  box-sizing: border-box;
-  margin-bottom: 5px;
-}
-
-.input-container input:focus {
-  border-color: #d4af37;
-  outline: none;
-  box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
-}
-
-.input-container input::placeholder {
-  color: transparent;
-}
-
-/* The label */
-.input-container label {
-  position: absolute;
-  top: 50%;
-  left: 15px;
-  transform: translateY(-50%);
-  font-size: 16px;
-  color: #999;
+  font-size: 15px;
+  background: transparent;
   transition: 0.3s ease;
 }
 
-/* When the input is filled or focused, move the label up */
-.input-container.filled label,
-.input-container input:focus + label {
-  top: -10px;
+.input-group label {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  background: white;
+  padding: 0 6px;
+  color: #999;
+  font-size: 14px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group.filled input {
+  border-color: #bfa46f;
+}
+
+.input-group input:focus + label,
+.input-group.filled label {
+  top: -8px;
   font-size: 12px;
-  color: #d4af37;
+  color: #bfa46f;
 }
 
-/* Submit button styling */
-.signup-button {
-  background-color: #d4af37;
-  color: white;
-  padding: 14px 0;
-  border: none;
-  border-radius: 8px;
+/* === Buttons === */
+.btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 18px;
-  font-weight: 600;
-  width: 100%;
-  transition: background-color 0.3s ease;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-.signup-button:hover {
-  background-color: #b3942e;
+.btn.gold {
+  background-color: #bfa46f;
+  color: white;
+  border: none;
 }
 
-/* Mobile responsiveness */
+.btn.gold:hover {
+  background-color: #a58d5a;
+}
+
+.btn.outline {
+  border: 2px solid #bfa46f;
+  background: transparent;
+  color: #bfa46f;
+}
+
+.btn.outline:hover {
+  background-color: #bfa46f;
+  color: white;
+}
+
+/* === Responsive === */
 @media (max-width: 768px) {
-  .signup-container {
-    flex-direction: column;
-    align-items: center;
+  .auth-wrapper {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .auth-card {
+    padding: 30px 20px;
   }
 }

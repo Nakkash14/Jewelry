@@ -1,227 +1,150 @@
-/* Full page container to hold both sides */
-.signin-container {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
+/* === Reset === */
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  background: linear-gradient(145deg, #faf8f6, #f0ecec);
-  font-family: 'Roboto', sans-serif;
-  overflow: hidden; /* Ensure no horizontal scrolling */
 }
 
-/* Left side: Sign In form */
-.signin-left {
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #fdfcfb, #e4d9c5);
+  color: #333;
+}
+
+/* === Wrapper === */
+.auth-wrapper {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: stretch;
+  padding: 40px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* === Auth Card === */
+.auth-card {
   flex: 1;
-  padding: 50px;
-  background-color: #ffffff;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
+  min-width: 320px;
+  max-width: 480px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  z-index: 1; /* Ensure this is below the sidebar */
+  padding: 40px 30px;
+  transition: transform 0.4s ease;
 }
 
-.signin-left h1 {
+.auth-card:hover {
+  transform: translateY(-5px);
+}
+
+.auth-card .content {
+  text-align: center;
+}
+
+/* === Typography === */
+.auth-card h2 {
   font-family: 'Playfair Display', serif;
   font-size: 28px;
-  color: #d4af37;
-  text-align: center;
-  margin-bottom: 20px;
+  color: #bfa46f;
+  margin-bottom: 10px;
 }
 
-.signin-left p {
+.auth-card p {
   font-size: 16px;
   color: #666;
   margin-bottom: 30px;
 }
 
-.signin-form {
-  width: 100%;
-  max-width: 450px;
-  margin-top: 30px;
+/* === Form === */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.form-group {
-  margin-bottom: 25px;
-  width: 100%;
-}
-
-/* Style for inputs with floating labels */
-.input-container {
+.input-group {
   position: relative;
-  margin-bottom: 15px;
 }
 
-.input-container input {
+.input-group input {
   width: 100%;
-  padding: 14px 20px;
-  border: 1px solid #ddd;
+  padding: 14px 16px;
+  border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 16px;
-  font-weight: 400;
-  transition: all 0.3s ease;
-  box-sizing: border-box;
+  font-size: 15px;
+  background: transparent;
+  transition: 0.3s ease;
 }
 
-.input-container input:focus {
-  border-color: #d4af37;
-  outline: none;
-}
-
-.input-container label {
+.input-group label {
   position: absolute;
-  left: 20px;
-  bottom: 15px;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  background: white;
+  padding: 0 6px;
+  color: #999;
   font-size: 14px;
-  color: #888;
   pointer-events: none;
   transition: all 0.3s ease;
 }
 
-.input-container.filled label,
-.input-container input:focus ~ label {
-  bottom: 40px;
-  font-size: 12px;
-  color: #d4af37;
+.input-group input:focus,
+.input-group.filled input {
+  border-color: #bfa46f;
 }
 
-.signin-button {
-  background-color: #d4af37;
-  color: white;
-  padding: 14px 24px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+.input-group input:focus + label,
+.input-group.filled label {
+  top: -8px;
+  font-size: 12px;
+  color: #bfa46f;
+}
+
+/* === Buttons === */
+.btn {
+  padding: 12px 24px;
   font-size: 16px;
   font-weight: 500;
-  transition: background-color 0.3s ease;
-  width: 100%;
-}
-
-.signin-button:hover {
-  background-color: #b3942e;
-}
-
-/* Divider line between SignIn and SignUp sections */
-.divider {
-  width: 2px;
-  background-color: #d4af37;
-  height: 100%;
-  margin: 0 20px; /* Add some spacing */
-}
-
-/* Right side: Sign Up prompt */
-.signin-right {
-  flex: 1;
-  padding: 50px;
-  background-color: #ffffff;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 1; /* Ensure this is below the sidebar */
-}
-
-.signin-right h2 {
-  font-size: 22px;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.signin-right p {
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 30px;
-}
-
-.signup-button {
-  background-color: #d4af37;
-  color: white;
-  padding: 12px 24px;
-  border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
-}
-
-.signup-button a {
-  color: white;
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-.signup-button:hover {
-  background-color: #b3942e;
-}
-
-/* Sidebar (Mobile) */
-.sidebar {
-  display: none;
-  position: fixed;
-  top: 0; /* Ensure it starts at the top of the page */
-  left: -100%; /* Hide it off the left initially */
-  width: 70%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  transition: left 0.3s ease;
-  z-index: 1000; /* Make sure the sidebar appears above the content */
-  padding-top: 80px; /* Optional: Add top padding for better spacing */
-}
-
-.sidebar.active {
-  left: 0;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.sidebar li {
-  margin: 20px 0;
-}
-
-.sidebar a {
+.btn.gold {
+  background-color: #bfa46f;
   color: white;
-  font-size: 20px;
-  text-decoration: none;
-  transition: color 0.3s ease;
+  border: none;
 }
 
-.sidebar a:hover {
-  color: #f0a500; /* Highlight color */
+.btn.gold:hover {
+  background-color: #a58d5a;
 }
 
-/* Mobile Responsive */
+.btn.outline {
+  border: 2px solid #bfa46f;
+  background: transparent;
+  color: #bfa46f;
+}
+
+.btn.outline:hover {
+  background-color: #bfa46f;
+  color: white;
+}
+
+/* === Responsive === */
 @media (max-width: 768px) {
-  .signin-container {
-    flex-direction: column;
+  .auth-wrapper {
     padding: 20px;
+    gap: 20px;
   }
 
-  .signin-left, .signin-right {
-    width: 100%;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-
-  .divider {
-    display: none; /* Hide the divider on mobile */
-  }
-  
-  .signin-left h1, .signin-right h2 {
-    font-size: 24px;
-  }
-
-  .signin-left p, .signin-right p {
-    font-size: 14px;
+  .auth-card {
+    padding: 30px 20px;
   }
 }

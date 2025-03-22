@@ -10,91 +10,67 @@ const SignUp = () => {
   });
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
-    <div className="signup-container">
-      {/* Left side: Sign In prompt */}
-      <div className="signup-left">
-        <h2>Already have an account?</h2>
-        <p>Sign in and start shopping our exquisite jewelry collections.</p>
-        <button className="signin-button">
-          <a href="/signin" className="signin-link">Sign In</a>
-        </button>
-      </div>
-
-      {/* Vertical divider */}
-      <div className="divider"></div>
-
-      {/* Right side: Sign Up form */}
-      <div className="signup-right">
-        <h1>Join Us</h1>
-        <p>Sign up to become part of our exclusive jewelry community.</p>
-        <form className="signup-form">
-          <div className="form-group">
-            <div className={`input-container ${formData.name ? 'filled' : ''}`}>
+    <div className="auth-wrapper">
+      <div className="auth-card sign-up">
+        <div className="content">
+          <h2>Create Account</h2>
+          <p>Join our exclusive jewelry community and indulge in timeless elegance.</p>
+          <form className="form">
+            <div className={`input-group ${formData.name ? "filled" : ""}`}>
               <input
                 type="text"
-                id="name"
                 name="name"
-                placeholder=" "
+                required
                 value={formData.name}
                 onChange={handleChange}
-                required
               />
-              <label htmlFor="name">Full Name</label>
+              <label>Full Name</label>
             </div>
-          </div>
-          <div className="form-group">
-            <div className={`input-container ${formData.email ? 'filled' : ''}`}>
+            <div className={`input-group ${formData.email ? "filled" : ""}`}>
               <input
                 type="email"
-                id="email"
                 name="email"
-                placeholder=" "
+                required
                 value={formData.email}
                 onChange={handleChange}
-                required
               />
-              <label htmlFor="email">Email Address</label>
+              <label>Email Address</label>
             </div>
-          </div>
-          <div className="form-group">
-            <div className={`input-container ${formData.password ? 'filled' : ''}`}>
+            <div className={`input-group ${formData.password ? "filled" : ""}`}>
               <input
                 type="password"
-                id="password"
                 name="password"
-                placeholder=" "
+                required
                 value={formData.password}
                 onChange={handleChange}
-                required
               />
-              <label htmlFor="password">Password</label>
+              <label>Password</label>
             </div>
-          </div>
-          <div className="form-group">
-            <div className={`input-container ${formData.confirmPassword ? 'filled' : ''}`}>
+            <div className={`input-group ${formData.confirmPassword ? "filled" : ""}`}>
               <input
                 type="password"
-                id="confirm-password"
-                name="confirm-password"
-                placeholder=" "
+                name="confirmPassword"
+                required
                 value={formData.confirmPassword}
                 onChange={handleChange}
-                required
               />
-              <label htmlFor="confirm-password">Confirm Password</label>
+              <label>Confirm Password</label>
             </div>
-          </div>
-          <button type="submit" className="signup-button">
-            Sign Up
-          </button>
-        </form>
+            <button type="submit" className="btn gold">Sign Up</button>
+          </form>
+        </div>
+      </div>
+
+      <div className="auth-card redirect">
+        <div className="content">
+          <h2>Already a member?</h2>
+          <p>Sign in to access your account and continue shopping.</p>
+          <a href="/signin" className="btn outline">Sign In</a>
+        </div>
       </div>
     </div>
   );

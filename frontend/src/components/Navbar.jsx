@@ -316,7 +316,7 @@ const Navbar = () => {
           <Link className="account-btn" to="/signup" onClick={() => setAccountDropdownOpen(false)}>
             <i className="fa fa-user-plus"></i> Create Account
           </Link>
-          <Link className="account-btn" to="/profile" onClick={() => setAccountDropdownOpen(false)}>
+          <Link className="account-btn" to="/userProfile" onClick={() => setAccountDropdownOpen(false)}>
             <i className="fa fa-cogs"></i> Profile
           </Link>
           <Link className="account-btn" to="/logout" onClick={() => setAccountDropdownOpen(false)}>
