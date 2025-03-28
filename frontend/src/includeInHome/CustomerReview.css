@@ -1,0 +1,145 @@
+.review-wrapper {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 30px 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  background-color: #fffdfa;
+  border: 1px solid #f1e8d6;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+}
+
+.review-title {
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.review-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-top: 1px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.stars-text {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stars-display .star {
+  font-size: 22px;
+  color: #f0c000;
+}
+
+.no-reviews {
+  font-size: 14px;
+  color: #555;
+}
+
+.action-btn {
+  background-color: #fcd000;
+  border: none;
+  color: #222;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.action-btn:hover {
+  background-color: #e5b900;
+}
+
+/* Slide animation wrapper */
+.review-form-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: max-height 1.2s ease, opacity 1s ease, transform 0.5s ease;
+}
+
+.review-form-wrapper.open {
+  max-height: 1000px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.review-form {
+  margin-top: 30px;
+}
+
+.form-title {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid #f0c000;
+  border-radius: 6px;
+  outline: none;
+  background: #fff;
+  transition: border 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #e5b900;
+}
+
+.rating-stars {
+  font-size: 24px;
+  display: flex;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.rating-stars .star {
+  color: #ccc;
+  transition: color 0.2s;
+}
+
+.rating-stars .star.filled {
+  color: #f0c000;
+}
+
+.submit-btn {
+  background-color: #fcd000;
+  border: none;
+  color: #222;
+  padding: 12px 28px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: block;
+  margin: 20px auto 0;
+}
+
+.submit-btn:hover {
+  background-color: #e5b900;
+}

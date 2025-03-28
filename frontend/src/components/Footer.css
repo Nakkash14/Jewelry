@@ -1,160 +1,237 @@
-/* --- FOOTER BASE --- */
+/* === ULTRA LUXURY JEWELRY FOOTER (ENHANCED) === */
 .footer {
-  background: #ffffff;
-  color: black;
-  padding: 80px 20px;
+  background-color: #0a0a0a;
+  color: #fdfdfd;
+  padding: 110px 40px 70px;
   font-family: 'Playfair Display', serif;
-  text-align: center;
-  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
-/* --- FOOTER CONTAINER --- */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 180px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #eac784, transparent);
+  transform: translateX(-50%);
+  animation: glowBar 6s ease-in-out infinite;
+}
+
+@keyframes glowBar {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
 .footer-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
+  max-width: 1380px;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
   flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 90px;
 }
 
-/* --- BRAND & NEWSLETTER SECTION --- */
 .footer-brand-newsletter {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
-  margin-bottom: 40px;
+  gap: 90px;
+  margin-bottom: 70px;
 }
 
-/* BRAND */
 .footer-brand {
-  text-align: left;
   flex: 1;
+  min-width: 260px;
 }
 
 .footer-brand h2 {
-  font-size: 28px;
-  font-weight: bold;
-  color: black;
+  font-size: 38px;
+  letter-spacing: 3px;
+  color: #fff;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  margin-bottom: 20px;
 }
 
 .footer-brand p {
   font-size: 16px;
-  color: #555;
-  max-width: 350px;
-  line-height: 1.6;
+  line-height: 1.9;
+  color: #c0c0c0;
+  max-width: 450px;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* --- NEWSLETTER --- */
 .footer-newsletter {
-  text-align: left;
   flex: 1;
-  max-width: 400px;
+  min-width: 280px;
+  max-width: 450px;
 }
 
-/* --- NEWSLETTER FORM (Underline Style) --- */
+.footer-newsletter h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fdfdfd;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.footer-newsletter p {
+  color: #aaa;
+  font-size: 15px;
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
 .newsletter-form {
   display: flex;
-  align-items: center;
-  border-bottom: 2px solid black;
-  padding-bottom: 5px;
-  width: 100%;
+  border-bottom: 2px solid #eac784;
+  padding-bottom: 8px;
 }
 
 .newsletter-form input {
-  border: none;
-  flex-grow: 1;
-  font-size: 15px;
+  flex: 1;
   background: transparent;
-  color: black;
+  border: none;
+  color: #fff;
+  font-size: 15px;
   padding: 10px 0;
   outline: none;
+  font-family: 'Poppins', sans-serif;
 }
 
 .newsletter-form input::placeholder {
-  color: #777;
+  color: #888;
   font-style: italic;
 }
 
 .newsletter-form button {
   background: none;
   border: none;
-  font-size: 15px;
+  color: #eac784;
   font-weight: bold;
-  color: black;
+  font-size: 15px;
   cursor: pointer;
-  transition: color 0.3s ease;
+  padding-left: 12px;
+  transition: color 0.4s ease;
 }
 
 .newsletter-form button:hover {
-  color: #d4af37;
+  color: #ffffff;
 }
 
-/* --- FOOTER LINKS --- */
 .footer-links {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  gap: 70px;
   width: 100%;
-  margin-top: 30px;
 }
 
 .footer-column {
-  text-align: left;
   flex: 1;
+  min-width: 220px;
 }
 
-/* FOOTER HEADERS (Mobile Collapsible) */
+.footer-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-links-list a {
+  position: relative;
+  font-size: 15px;
+  color: #cbcbcb;
+  text-decoration: none;
+  padding-bottom: 2px;
+  letter-spacing: 0.4px;
+  transition: all 0.3s ease;
+}
+
+.footer-links-list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 1.5px;
+  background: linear-gradient(to right, #eac784, #e0b871);
+  transition: width 0.4s ease;
+}
+
+.footer-links-list a:hover {
+  color: #eac784;
+}
+
+.footer-links-list a:hover::after {
+  width: 100%;
+}
+
+.footer-mission {
+  max-width: 400px;
+}
+
+.footer-mission h4 {
+  font-size: 19px;
+  font-weight: 600;
+  color: #eac784;
+  margin-bottom: 16px;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+
+.footer-mission p {
+  font-size: 15px;
+  color: #d3d3d3;
+  line-height: 1.9;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+  color: #888;
+  padding-top: 60px;
+  margin-top: 70px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
 .footer-header {
   display: none;
 }
 
-/* FOOTER LINKS LIST */
-.footer-links-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.footer-links-list a,
-.footer-links-list p {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 15px;
-  color: #666;
-  text-decoration: none;
-  margin-bottom: 8px;
-  transition: color 0.3s ease;
-}
-
-.footer-links-list a:hover {
-  color: #d4af37;
-}
-
-/* --- MOBILE ONLY (Collapsible Sections) --- */
 @media (max-width: 768px) {
-  .footer-links {
+  .footer-container {
     flex-direction: column;
+    gap: 70px;
   }
 
-  .footer-header {
+  .footer-links {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer-brand-newsletter {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .mobile-only {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
     font-size: 16px;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    color: #fdfdfd;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 0;
   }
 
   .toggle-icon {
     font-size: 18px;
     font-weight: bold;
-    transition: transform 0.3s ease;
   }
 
   .footer-links-list {
@@ -163,6 +240,6 @@
 
   .footer-links-list.open {
     display: flex;
-    padding-top: 8px;
+    padding-top: 12px;
   }
 }
