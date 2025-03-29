@@ -1,239 +1,363 @@
-/* Reset & Global Styles */
+/* === LUXURY JEWELRY NAVBAR STYLE (UPDATED) === */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f9f9f9;
-    padding-top: 75px; /* Adjusted to match navbar height */
-}
-
-/* Navbar Container */
-.navbar-container {
+  }
+  
+  body {
+    font-family: 'Playfair Display', serif;
+    background-color: #fff;
+    padding-top: 90px;
+  }
+  
+  .navbar-container {
     width: 100%;
-}
-
-/* Navbar */
-.navbar {
+    z-index: 1000;
+  }
+  
+  .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: white;
-    padding: 15px 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #fffdfa, #f5eee5);
+    padding: 20px 60px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     z-index: 1000;
-}
-
-/* Logo */
-.nav-left .logo h1 {
-    font-size: 26px;
-    font-weight: bold;
-    margin: 0;
-    color: #1a1a1a;
-    transition: transform 0.3s ease;
-}
-
-.nav-left .logo h1:hover {
-    transform: scale(1.05);
-}
-
-/* Navigation Links */
-.nav-right {
+    transition: all 0.4s ease-in-out;
+  }
+  
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
+  
+  .nav-left .logo h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #2c2c2c;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+  
+  .nav-links a {
+    color: #444;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 0;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #d4af37;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .nav-links a:hover {
+    color: #b89060;
+  }
+  
+  .nav-links a:hover::before {
+    width: 100%;
+  }
+  
+  .nav-right {
     display: flex;
     align-items: center;
     gap: 20px;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-}
-
-.nav-links a {
-    color: #1a1a1a;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
+  }
+  
+  .search-wrapper {
     position: relative;
-    transition: color 0.3s ease-in-out;
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: -5px;
-    width: 0;
-    height: 2px;
-    background: #c49a6c;
-    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
-}
-
-.nav-links a:hover {
-    color: #c49a6c;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-    left: 0;
-}
-
-/* Navbar Icons */
-.nav-icons {
     display: flex;
     align-items: center;
-    gap: 15px;
-}
-
-.account-icon {
-    cursor: pointer;
-    font-size: 22px;
+  }
+  
+  .search-icon-only {
+    font-size: 18px;
     color: #1a1a1a;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.account-icon:hover {
-    color: #c49a6c;
-    transform: scale(1.1);
-}
-
-/* Hamburger Menu */
-.hamburger-menu {
-    display: none;
-    flex-direction: column;
     cursor: pointer;
-    gap: 5px;
-    transition: all 0.3s ease;
-}
-
-.hamburger-menu span {
-    width: 28px;
-    height: 3px;
-    background-color: #1a1a1a;
-    transition: all 0.3s ease;
-}
-
-.hamburger-menu:hover span {
-    background-color: #c49a6c;
-}
-
-/* Sidebar (Mobile Menu) */
-.sidebar {
+    transition: color 0.3s ease;
+  }
+  
+  .search-icon-only:hover {
+    color: #c49a6c;
+  }
+  
+  .search-input-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 10px 60px;
+    background: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+  
+  .search-input-container.active {
+    display: block;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 10px 18px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    background-color: #fff;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .search-input:focus {
+    border-color: #b89060;
+    box-shadow: 0 0 0 2px rgba(185, 144, 96, 0.2);
+  }
+  
+  .account-icon,
+  .cart-icon {
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .account-icon:hover,
+  .cart-icon:hover {
+    color: #d4af37;
+    transform: scale(1.1);
+  }
+  
+  .account-icon {
+    display: block;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+  
+    .hamburger-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+    }
+  
+    .hamburger-menu span {
+      width: 26px;
+      height: 2px;
+      background: #2c2c2c;
+      transition: background 0.3s ease;
+    }
+  
+    .hamburger-menu:hover span {
+      background: #b89060;
+    }
+  
+    .account-icon {
+      display: none;
+    }
+  
+    .search-wrapper {
+      justify-content: flex-end;
+    }
+  }
+  
+  .sidebar {
     position: fixed;
     top: 75px;
     left: -100%;
-    width: 250px;
+    width: 260px;
     height: calc(100% - 75px);
-    background: white;
-    padding: 40px 20px;
+    background: #fff;
+    padding: 40px 24px;
     transition: left 0.4s ease-in-out;
-    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 6px 0 14px rgba(0, 0, 0, 0.1);
     z-index: 999;
-}
-
-.sidebar.active {
+  }
+  
+  .sidebar.active {
     left: 0;
-}
-
-.sidebar ul {
+  }
+  
+  .sidebar ul {
     list-style: none;
-    padding: 0;
-}
-
-.sidebar li {
-    padding: 15px 0;
-}
-
-.sidebar a {
-    color: #1a1a1a;
+  }
+  
+  .sidebar li {
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .sidebar a {
+    color: #333;
+    font-size: 17px;
+    font-weight: 500;
     text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
     display: block;
-    transition: all 0.3s ease-in-out;
-}
-
-.sidebar a:hover {
-    color: #c49a6c;
-}
-
-/* Account Dropdown */
-.account-dropdown {
+    transition: color 0.3s ease;
+  }
+  
+  .sidebar a:hover {
+    color: #b89060;
+  }
+  
+  .account-dropdown {
     position: fixed;
-    top: 60px;
+    top: 75px;
     right: -350px;
-    width: 300px;
-    height: calc(100% - 60px);
-    background: white;
-    padding: 20px;
-    transition: right 0.4s ease-in-out;
-    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
-    border-top: 1px solid #f0f0f0;
+    width: 320px;
+    height: calc(100% - 75px);
+    background: #fefbf8;
+    padding: 30px;
+    transition: right 0.5s ease-in-out;
+    box-shadow: -6px 0 14px rgba(0, 0, 0, 0.1);
     z-index: 999;
-}
-
-.account-dropdown.active {
+    overflow-y: auto;
+  }
+  
+  .account-dropdown.active {
     right: 0;
-}
-
-.account-menu {
+  }
+  
+  .account-menu {
     text-align: center;
-    padding-top: 20px;
-}
-
-.account-menu p {
-    color: #1a1a1a;
-    font-size: 20px;
+  }
+  
+  .account-menu p {
+    color: #2c2c2c;
+    font-size: 18px;
     font-weight: 600;
-    margin-bottom: 20px;
-}
-
-.account-btn {
+    margin-bottom: 24px;
+  }
+  
+  .account-btn {
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 12px;
-    background: #c49a6c;
-    color: white;
-    padding: 12px;
-    border-radius: 50px;
+    align-items: center;
+    gap: 10px;
+    background: #b89060;
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 35px;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold;
-    margin-bottom: 12px;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-}
-
-.account-btn:hover {
-    background: #b08255;
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  .account-btn:hover {
+    background: #a07b45;
+    transform: scale(1.06);
+  }
+  
+  .no-scroll {
+    overflow: hidden;
+  }
+  
+  .search-bar-container {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    background: #fffdfa;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+    padding: 20px 60px;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  
+  .search-bar-input {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 24px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+  }
+  
+  .search-bar-input:focus {
+    border-color: #b89060;
+    box-shadow: 0 0 0 2px rgba(185, 144, 96, 0.2);
+  }
+  
+  @media (max-width: 768px) {
+    .search-bar-container {
+      padding: 16px 20px;
     }
-
-    .hamburger-menu {
-        display: flex;
-    }
-
-    .sidebar {
-        display: block;
-    }
-
-    .account-icon {
-        display: none;
-    }
-}
+  }
+  
+  .search-bar-container {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    background: #fffdfa;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+    padding: 16px 60px;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .search-bar-input {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .search-bar-input:focus {
+    border-color: #b89060;
+  }
+  
+  .search-submit-btn {
+    background: #b89060;
+    border: none;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+  }
+  
+  .search-submit-btn:hover {
+    background: #a07b45;
+  }  

@@ -1,110 +1,116 @@
-/* === Base === */
+/* === Luxury Theme === */
 body {
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(135deg, #f4ece1 0%, #dfd3c3 100%);
+  color: #4a3b30;
   margin: 0;
   padding: 0;
-  font-family: 'Georgia', serif;
-  background: linear-gradient(to bottom right, #fef9f2, #f6f0e2);
-  color: #333;
 }
 
-/* === Page Layout === */
-.classic-profile-page {
+.luxury-background {
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 60px 20px;
+  justify-content: center;
   min-height: 100vh;
+  padding: 50px;
 }
 
-/* === Profile Card === */
-.classic-profile-card {
-  background: white;
-  padding: 40px 35px;
-  border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  border: 1px solid #ebdecc;
+.luxury-profile-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+  max-width: 550px;
   width: 100%;
-  max-width: 600px;
+  padding: 40px;
+  border: 2px solid #c9b7a2;
 }
 
-/* === Title === */
-.classic-title {
+.luxury-profile-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #a58159;
+  margin-bottom: 30px;
   text-align: center;
-  font-size: 28px;
-  color: #bfa46f;
-  margin-bottom: 30px;
-  font-family: 'Playfair Display', serif;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
 
-/* === User Info === */
-.classic-details {
+.luxury-profile-info {
   margin-bottom: 30px;
-  line-height: 1.8;
 }
 
-.detail-row {
-  font-size: 16px;
-  border-bottom: 1px solid #f0e6d6;
-  padding: 10px 0;
+.luxury-profile-row {
   display: flex;
   justify-content: space-between;
-  font-family: 'Segoe UI', sans-serif;
+  border-bottom: 1px solid #ece0d1;
+  padding: 15px 0;
 }
 
-/* === Buttons === */
-.classic-buttons {
+.luxury-label {
+  font-weight: 600;
+  color: #8b6f5a;
+  font-size: 16px;
+}
+
+.luxury-value {
+  font-weight: 400;
+  color: #4a3b30;
+  font-size: 16px;
+}
+
+.luxury-profile-actions {
   display: flex;
-  flex-direction: column;
   gap: 15px;
-  margin-top: 10px;
+  justify-content: center;
 }
 
-.btn-classic {
-  padding: 12px;
-  border-radius: 30px;
+.btn {
+  padding: 12px 20px;
+  border-radius: 10px;
   font-size: 15px;
-  font-weight: bold;
-  border: none;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
-.btn-classic.edit {
-  background: #bfa46f;
-  color: white;
+.luxury-edit-btn {
+  background-color: #a58159;
+  color: #ffffff;
 }
 
-.btn-classic.edit:hover {
-  background: #9f894d;
+.luxury-edit-btn:hover {
+  background-color: #916d46;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(165, 129, 89, 0.3);
 }
 
-.btn-classic.delete {
-  background: #e05656;
-  color: white;
+.luxury-delete-btn {
+  background-color: #b33939;
+  color: #ffffff;
 }
 
-.btn-classic.delete:hover {
-  background: #c0392b;
+.luxury-delete-btn:hover {
+  background-color: #9e2b2b;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(179, 57, 57, 0.3);
 }
 
-/* === Responsive === */
+/* === Responsive Adjustments === */
 @media (max-width: 600px) {
-  .classic-profile-card {
-    padding: 30px 20px;
+  .luxury-profile-card {
+    padding: 25px;
   }
 
-  .classic-title {
-    font-size: 22px;
-  }
-
-  .detail-row {
+  .luxury-profile-row {
     flex-direction: column;
     align-items: flex-start;
-    font-size: 15px;
   }
 
-  .btn-classic {
+  .luxury-profile-actions {
+    flex-direction: column;
+  }
+
+  .btn {
     width: 100%;
   }
 }
