@@ -221,9 +221,12 @@ const Navbar = () => {
               <input type="text" className="search-input" placeholder="Search..." autoFocus />
             )} */}
           </div>
-          <div className="cart-icon">
+          {/* <div className="cart-icon">
             <i className="fa fa-shopping-cart"></i>
-          </div>
+          </div> */}
+          <Link to="/cart" className="cart-icon">
+            <i className="fa fa-shopping-cart"></i>
+          </Link>
           <div className="account-icon" onClick={toggleAccountDropdown}>
             <i className="fa fa-user"></i>
           </div>
