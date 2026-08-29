@@ -39,7 +39,8 @@ import UserProfile from './User/UserProfile'; // Import User Profile
 import EditProfile from './User/EditProfile.jsx';
 import Navbar from './components/Navbar'; // Import Navbar
 import Footer from './components/Footer.jsx'; // Import Footer
-import Cart from './Cart/Cart.js';
+import Cart from './Cart/Cart';
+import NotFound from './components/NotFound';
 
 const App = () => {
   return (
@@ -55,6 +56,7 @@ const App = () => {
         <Route path="/userprofile" element={<UserProfile />} />
         <Route path="/edit-profile" element={<EditProfile />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer />
