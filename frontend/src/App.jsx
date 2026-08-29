@@ -39,7 +39,7 @@ import UserProfile from './User/UserProfile'; // Import User Profile
 import EditProfile from './User/EditProfile.jsx';
 import Navbar from './components/Navbar'; // Import Navbar
 import Footer from './components/Footer.jsx'; // Import Footer
-import Cart from './Cart/Cart.js';
+import Cart from './Cart/Cart';
 
 const App = () => {
   return (

@@ -8,7 +8,7 @@ Shopify is the **commerce system of record** (products, collections, inventory, 
 
 | Path | Role today |
 |---|---|
-| `frontend/` | Create React App jewelry UI (Vite migration is planned, not done yet) |
+| `frontend/` | Vite 8 + React jewelry UI |
 | `backend/` | Placeholder Node package only — no server implementation yet |
 | `docs/adr/` | Architecture decision records |
 
@@ -25,7 +25,7 @@ PostgreSQL will hold custom application data and auth/integration state only. It
 - **Node.js 24 LTS** (this repository pins major version 24 in `.nvmrc`). Local reference version: v24.19.0.
 - npm (comes with Node).
 
-The frontend is still Create React App. The backend cannot be started. Shopify, database, and Vite tooling are not part of this phase.
+The frontend is Vite + React. From `frontend/`, run `npm start` or `npm run dev` (http://localhost:3000). The backend cannot be started. Shopify and database are not part of this phase.
 
 ## Secrets policy
 
@@ -36,4 +36,4 @@ The frontend is still Create React App. The backend cannot be started. Shopify, 
 
 ## Incremental implementation
 
-Foundations (this phase) only establish ignore rules, Node pinning, env templates, and ADRs. Create React App, Shopify integration, database, and backend behavior are later phases.
+Foundations and the CRA → Vite 8 migration are in place. Shopify integration, database, and backend behavior are later phases.
